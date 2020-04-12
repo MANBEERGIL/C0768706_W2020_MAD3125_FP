@@ -8,7 +8,7 @@
     <TextView
             android:id="@+id/text_customer_name"
             android:layout_width="411dp"
-            android:layout_height="100dp"
+            android:layout_height="56dp"
             android:text="     Customer Name"
             android:textSize="24sp"
             android:textStyle="bold"

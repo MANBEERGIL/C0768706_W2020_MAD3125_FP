@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.CustomerViewHolder>{
     ArrayList<Customer> customerArrayList;
     public CustomerAdapter(ArrayList<Customer> customerArrayList) {
-        this.customerArrayList=customerArrayList;
+        this.customerArrayList = customerArrayList;
     }
 
     @NonNull

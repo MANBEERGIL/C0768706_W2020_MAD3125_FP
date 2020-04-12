@@ -26,9 +26,9 @@ public class CustomerListActivity extends AppCompatActivity {
     void customersList(){
         customers=new ArrayList<>();
        customers.add(new Customer("  Manbeer kaur"));
-       customers.add(new Customer("  Geetanjali Gupta"));
-       customers.add(new Customer("  Komal Subhra"));
-       customers.add(new Customer("  Manpreet Kaur"));
+//       customers.add(new Customer("  Geetanjali Gupta"));
+//       customers.add(new Customer("  Komal Subhra"));
+//       customers.add(new Customer("  Manpreet Kaur"));
 
 
     }
