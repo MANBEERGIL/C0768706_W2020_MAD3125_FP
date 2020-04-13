@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
      private TextView text_email;
@@ -38,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                     alertBox(LoginActivity.this,"Alert","Enter the Password");
 
                 }else if(text_email.getText().toString().equals(Email)&&(text_password.getText().toString().equals(Password))){
-                    alertBox(LoginActivity.this,"Alert","Log In Successful");
+                    Toast.makeText(getApplicationContext(),"Log In Succesful",Toast.LENGTH_LONG).show();
 
                    Intent mIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
                     startActivity(mIntent);

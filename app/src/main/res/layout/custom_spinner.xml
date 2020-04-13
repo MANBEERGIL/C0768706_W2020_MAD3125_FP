@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/text1"
+            style="?attr/spinnerDropDownItemStyle"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="18sp"
+            android:gravity="left"
+            android:text="Status"
+            android:textStyle="bold"
+            android:padding="1sp"
+            android:ellipsize="marquee"
+            android:textColorHint="#111111"
+            android:textColor="#111111"
+            android:background="#ffff00"
+            />
+</androidx.constraintlayout.widget.ConstraintLayout>
