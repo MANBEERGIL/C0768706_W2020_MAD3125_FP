@@ -6,4 +6,42 @@
         android:layout_height="match_parent"
         tools:context=".ShowBillDetailsActivity">
 
+    <EditText
+            android:id="@+id/text_id"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></EditText>
+
+    <EditText
+            android:id="@+id/text_email"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_name"></EditText>
+
+    <EditText
+            android:id="@+id/text_name"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_id"></EditText>
+
+    <EditText
+            android:id="@+id/editText4"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_email" />
+    "
+"
 </androidx.constraintlayout.widget.ConstraintLayout>
