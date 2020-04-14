@@ -10,7 +10,7 @@ import com.example.c0768706_w2020_mad3125_fp.R;
 
 import java.util.ArrayList;
 
-import models.CustomerAdapter;
+import adapter.CustomerAdapter;
 
 public class CustomerListActivity extends AppCompatActivity {
     private RecyclerView rvCustomerList;

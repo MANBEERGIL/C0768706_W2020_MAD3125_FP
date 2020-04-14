@@ -1,7 +1,9 @@
 package ui;
 
 public class Customer {
+
     private  String customerName;
+
 
     public Customer(String Name ) {
         customerName = Name;
