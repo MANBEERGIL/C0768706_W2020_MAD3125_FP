@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ShowBillDetailsActivity">
+        tools:context="ui.ShowBillDetailsActivity">
 
     <EditText
             android:id="@+id/text_id"
@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_id"></EditText>
 
     <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/text_number"
             android:layout_width="411dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"

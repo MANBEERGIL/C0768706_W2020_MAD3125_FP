@@ -1,4 +1,4 @@
-package com.example.c0768706_w2020_mad3125_fp;
+package ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,7 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.c0768706_w2020_mad3125_fp.R;
+
 import java.util.ArrayList;
+
+import models.CustomerAdapter;
 
 public class CustomerListActivity extends AppCompatActivity {
     private RecyclerView rvCustomerList;

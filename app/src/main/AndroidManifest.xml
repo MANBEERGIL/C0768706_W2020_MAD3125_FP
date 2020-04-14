@@ -8,12 +8,12 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".ShowBillDetailsActivity"></activity>
-        <activity android:name=".AddNewCustomer" />
-        <activity android:name=".CustomerListActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SplashActivity">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity android:name="ui.ShowBillDetailsActivity"></activity>
+        <activity android:name="ui.AddNewCustomer" />
+        <activity android:name="ui.CustomerListActivity" />
+        <activity android:name="ui.LoginActivity" />
+        <activity android:name="ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

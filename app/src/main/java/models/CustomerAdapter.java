@@ -1,21 +1,21 @@
-package com.example.c0768706_w2020_mad3125_fp;
+package models;
 
-import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import ui.Customer;
+import com.example.c0768706_w2020_mad3125_fp.R;
+import ui.ShowBillDetailsActivity;
 
-import static androidx.core.content.ContextCompat.startActivity;
+import java.util.ArrayList;
 
 public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.CustomerViewHolder>{
     ArrayList<Customer> customerArrayList;

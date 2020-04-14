@@ -1,4 +1,4 @@
-package com.example.c0768706_w2020_mad3125_fp;
+package ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,11 +8,12 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.c0768706_w2020_mad3125_fp.R;
 
 import java.util.Calendar;
 
@@ -21,12 +22,13 @@ public class AddNewCustomer extends AppCompatActivity {
     String status;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
     private TextView text_birth_date;
-
+    private TextView text_age;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_customer);
         text_birth_date = findViewById(R.id.text_birth_date);
+        text_age = findViewById(R.id.text_age);
         text_birth_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +49,17 @@ public class AddNewCustomer extends AppCompatActivity {
                 Log.d("PersonalInformation", "onDateSet:mm/dd/yyyy:" + month + "/" + dayOfMonth + "/" + year);
                 String date = "Birth Date : " + month + "/" + dayOfMonth + "/" + year;
                 text_birth_date.setText(date);
-
+                Calendar dob = Calendar.getInstance();
+                Calendar today = Calendar.getInstance();
+                dob.set(year, month, dayOfMonth);
+                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                Integer ageInt = new Integer(age);
+                String ageS = ageInt.toString();
+                if (age > 0) {
+                    text_age.setText(ageS);
+                } else {
+                    Toast.makeText(AddNewCustomer.this, "Incorrect birth date", Toast.LENGTH_LONG).show();
+                }
 
             }
         };

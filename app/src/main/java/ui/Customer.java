@@ -1,4 +1,4 @@
-package com.example.c0768706_w2020_mad3125_fp;
+package ui;
 
 public class Customer {
     private  String customerName;

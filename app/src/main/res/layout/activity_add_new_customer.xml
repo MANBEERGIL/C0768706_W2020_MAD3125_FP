@@ -4,12 +4,13 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AddNewCustomer">
+        tools:context="ui.AddNewCustomer">
 
     <EditText
             android:id="@+id/text_first_name"
             android:layout_width="411dp"
             android:layout_height="50dp"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:hint="   First Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +21,7 @@
             android:layout_width="411dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:hint="   Last Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +32,7 @@
             android:layout_width="411dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:hint="  Email Address"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +43,7 @@
             android:layout_width="411dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -67,11 +71,13 @@
                 android:text="Other" />
 
     </RadioGroup>
+
     <TextView
             android:id="@+id/text_birth_date"
             android:layout_width="411dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:text="  Birth Date"
             android:textColor="#1E1B1B"
             android:textSize="18sp"
@@ -85,10 +91,23 @@
             android:layout_width="126dp"
             android:layout_height="59dp"
             android:layout_marginStart="142dp"
-            android:layout_marginTop="54dp"
             android:layout_marginEnd="143dp"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:text="Save"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="370dp" />
+
+    <TextView
+            android:id="@+id/text_age"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
+            android:text="   Age"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_birth_date" />

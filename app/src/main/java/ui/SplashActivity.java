@@ -1,10 +1,12 @@
-package com.example.c0768706_w2020_mad3125_fp;
+package ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.c0768706_w2020_mad3125_fp.R;
 
 public class SplashActivity extends AppCompatActivity {
 
