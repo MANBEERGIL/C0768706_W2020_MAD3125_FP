@@ -1,47 +1,84 @@
 package models;
 
+import java.util.ArrayList;
+
 public class Customers {
-    private  String billId;
-    private  String billDate;
-    private String billType;
-    private  String totalBillAmount;
+   private String customerId;
+   private String firstName;
+   private  String lastName;
+   private String fullName;
+   private String email;
+   private ArrayList<Bill> bills;
+   private  Double totalBillToPAY;
 
-    public Customers(String billId, String billDate, String billType, String totalBillAmount) {
-        this.billId = billId;
-        this.billDate = billDate;
-        this.billType = billType;
-        this.totalBillAmount = totalBillAmount;
+    public Customers(String customerId, String firstName, String lastName, String fullName, String email, ArrayList<Bill>bills, Double totalBillToPAY) {
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = fullName;
+        this.email = email;
+       this.bills = bills;
+        this.totalBillToPAY = totalBillToPAY;
     }
 
-    public String getBillId() {
-        return billId;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setBillId(String billId) {
-        this.billId = billId;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
-    public String getBillDate() {
-        return billDate;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setBillDate(String billDate) {
-        this.billDate = billDate;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getBillType() {
-        return billType;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setBillType(String billType) {
-        this.billType = billType;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getTotalBillAmount() {
-        return totalBillAmount;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setTotalBillAmount(String totalBillAmount) {
-        this.totalBillAmount = totalBillAmount;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public ArrayList<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(ArrayList<Bill> bills) {
+        this.bills = bills;
+    }
+
+    public Double getTotalBillToPAY() {
+        return totalBillToPAY;
+    }
+
+    public void setTotalBillToPAY(Double totalBillToPAY) {
+        this.totalBillToPAY = totalBillToPAY;
+    }
+    private String fullName(){
+        String fullName ;
+        fullName = firstName + "" + lastName;
+        return  fullName;
     }
 }
