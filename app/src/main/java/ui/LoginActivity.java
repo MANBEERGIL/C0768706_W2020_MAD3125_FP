@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
      private TextView text_password;
      private Button btn_submit;
      private Switch remember_me;
-    // private static final   SharedPreferences preferences ;
+    private    SharedPreferences preferences ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,20 +64,21 @@ public class LoginActivity extends AppCompatActivity {
         remember_me.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(compoundButton.isChecked()){
-                SharedPreferences preferences = getSharedPreferences("Switch",MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("UserName",text_email.getText().toString());
-                editor.putString("Password",text_password.getText().toString());
-                editor.apply();
-               // Toast.makeText(LoginActivity.this,"Checked",Toast.LENGTH_LONG).show();
-            }else {
+                SharedPreferences.Editor editor = null;
+                if (compoundButton.isChecked()) {
+                    final SharedPreferences preferences = getSharedPreferences("Switch", MODE_PRIVATE);
+                    editor = preferences.edit();
+                    editor.putString("UserName", text_email.getText().toString());
+                    editor.putString("Password", text_password.getText().toString());
+                    editor.apply();
+                    Toast.makeText(LoginActivity.this, "Checked", Toast.LENGTH_LONG).show();
+                } else {
 
-              //      Preferences.edit().clear().apply();
+                    editor.clear().apply();
 
                 }
-                Log.i("UserName",text_email.getText().toString());
-                Log.i("Password",text_password.getText().toString());
+                Log.i("UserName", text_email.getText().toString());
+                Log.i("Password", text_password.getText().toString());
             }
         });
     }
