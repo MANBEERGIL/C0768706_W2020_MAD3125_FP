@@ -10,12 +10,10 @@ public class Bill {
     private  String totalBillAmount;
 
 
-
-    public Bill(String billId, String billType, Date billDate) {
+    public Bill(String billId, Date billDate, String billType) {
         this.billId = billId;
         this.billDate = billDate;
         this.billType = billType;
-
 
     }
 
