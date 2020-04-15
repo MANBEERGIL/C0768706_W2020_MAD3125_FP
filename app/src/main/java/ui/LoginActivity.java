@@ -40,47 +40,41 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String Email = "manbeergill545@gmail.com";
-                String Password ="s3cr3t";
-                if(text_email.getText().toString().isEmpty()){
+                String Password = "s3cr3t";
+                if (text_email.getText().toString().isEmpty()) {
                     text_email.setError(" Field is not to be empty");
-                    alertBox(LoginActivity.this,"Alert","Enter the Email");
-                }else if(text_password.getText().toString().isEmpty()){
+                    alertBox(LoginActivity.this, "Alert", "Enter the Email");
+                } else if (text_password.getText().toString().isEmpty()) {
                     text_password.setError("Field is not to be empty");
-                    alertBox(LoginActivity.this,"Alert","Enter the Password");
+                    alertBox(LoginActivity.this, "Alert", "Enter the Password");
 
-                }else if(text_email.getText().toString().equals(Email)&&(text_password.getText().toString().equals(Password))){
-                    Toast.makeText(getApplicationContext(),"Log In Succesful",Toast.LENGTH_LONG).show();
+                } else if (text_email.getText().toString().equals(Email) && (text_password.getText().toString().equals(Password))) {
+                    Toast.makeText(getApplicationContext(), "Log In Succesful", Toast.LENGTH_LONG).show();
+                    SharedPreferences.Editor editor = null;
+                    if (remember_me.isChecked()) {
+                        final SharedPreferences preferences = getSharedPreferences("Switch", MODE_PRIVATE);
+                        editor = preferences.edit();
+                        editor.putString("UserName", text_email.getText().toString());
+                        editor.putString("Password", text_password.getText().toString());
+                        editor.apply();
 
-                   Intent mIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
-                    startActivity(mIntent);
-                }else{
-                    alertBox(LoginActivity.this,"Invalid Value","Invalid Email or Password ");
-
-                }
-
-            }
-        });
-      //  final SharedPreferences finalPreferences = preferences;
-        remember_me.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                SharedPreferences.Editor editor = null;
-                if (compoundButton.isChecked()) {
-                    final SharedPreferences preferences = getSharedPreferences("Switch", MODE_PRIVATE);
-                    editor = preferences.edit();
-                    editor.putString("UserName", text_email.getText().toString());
-                    editor.putString("Password", text_password.getText().toString());
-                    editor.apply();
-                    Toast.makeText(LoginActivity.this, "Checked", Toast.LENGTH_LONG).show();
+                        Intent mIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
+                        startActivity(mIntent);
+                    } else {
+                        editor.clear().apply();
+                        Intent mIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
+                        startActivity(mIntent);
+                    }
                 } else {
-
-                    editor.clear().apply();
+                    alertBox(LoginActivity.this, "Invalid Value", "Invalid Email or Password ");
 
                 }
-                Log.i("UserName", text_email.getText().toString());
-                Log.i("Password", text_password.getText().toString());
             }
-        });
+
+            });
+
+      //  final SharedPreferences finalPreferences = preferences;
+
     }
     private void alertBox(Context context, String title,String message){
        android.app.AlertDialog.Builder alertDialog = new android.app.AlertDialog.Builder(context);

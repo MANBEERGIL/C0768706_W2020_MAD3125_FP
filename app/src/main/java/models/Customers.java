@@ -1,8 +1,12 @@
 package models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customers {
+public class Customers implements Parcelable {
    private String customerId;
    private String firstName;
    private  String lastName;
@@ -20,6 +24,31 @@ public class Customers {
        this.bills = bills;
         this.totalBillToPAY = totalBillToPAY;
     }
+
+    protected Customers(Parcel in) {
+        customerId = in.readString();
+        firstName = in.readString();
+        lastName = in.readString();
+        fullName = in.readString();
+        email = in.readString();
+        if (in.readByte() == 0) {
+            totalBillToPAY = null;
+        } else {
+            totalBillToPAY = in.readDouble();
+        }
+    }
+
+    public static final Creator<Customers> CREATOR = new Creator<Customers>() {
+        @Override
+        public Customers createFromParcel(Parcel in) {
+            return new Customers(in);
+        }
+
+        @Override
+        public Customers[] newArray(int size) {
+            return new Customers[size];
+        }
+    };
 
     public String getCustomerId() {
         return customerId;
@@ -80,5 +109,25 @@ public class Customers {
         String fullName ;
         fullName = firstName + "" + lastName;
         return  fullName;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(customerId);
+        dest.writeString(firstName);
+        dest.writeString(lastName);
+        dest.writeString(fullName);
+        dest.writeString(email);
+        if (totalBillToPAY == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeDouble(totalBillToPAY);
+        }
     }
 }

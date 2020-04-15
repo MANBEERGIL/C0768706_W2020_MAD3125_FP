@@ -1,18 +1,24 @@
 package models;
 
+import java.util.Date;
+
 public class Bill {
 
     private  String billId;
-    private  String billDate;
+    private Date billDate;
     private String billType;
     private  String totalBillAmount;
 
-    public Bill(String billId, String billDate, String billType, String totalBillAmount) {
+
+
+    public Bill(String billId, String billType, Date billDate) {
         this.billId = billId;
         this.billDate = billDate;
         this.billType = billType;
-        this.totalBillAmount = totalBillAmount;
+
+
     }
+
 
     public String getBillId() {
         return billId;
@@ -22,11 +28,11 @@ public class Bill {
         this.billId = billId;
     }
 
-    public String getBillDate() {
+    public Date getBillDate() {
         return billDate;
     }
 
-    public void setBillDate(String billDate) {
+    public void setBillDate(Date billDate) {
         this.billDate = billDate;
     }
 
