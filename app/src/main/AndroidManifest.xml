@@ -8,8 +8,11 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name="ui.ShowBillDetailsActivity"></activity>
+            android:theme="@style/AppTheme">
+        <activity android:name="ui.AddNewInternetBillActivity"></activity>
+        <activity android:name="ui.AddNewHydroBillActivity" />
+        <activity android:name="ui.AddNewMobileBillActivity" />
+        <activity android:name="ui.ShowBillDetailsActivity" />
         <activity android:name="ui.AddNewCustomer" />
         <activity android:name="ui.CustomerListActivity" />
         <activity android:name="ui.LoginActivity" />

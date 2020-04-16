@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="ui.AddNewHydroBillActivity">
+
+    <EditText
+            android:id="@+id/text_h_id"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="    Bill id"
+            android:inputType="textPersonName"
+            android:textColor="#100E0E"
+            android:textColorHighlight="#50D2E3"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+            android:id="@+id/text_agency"
+            android:layout_width="410dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="    Agency Name"
+            android:inputType="textPersonName"
+            android:textColor="#100D0D"
+            android:textColorHighlight="#43C4D5"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+
+    <EditText
+            android:id="@+id/text_units"
+            android:layout_width="411dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="    Units Consumed"
+            android:inputType="textPersonName"
+            android:textColor="#131111"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_agency" />
+
+    <EditText
+            android:id="@+id/editText6"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="    Bill Date"
+            android:inputType="date"
+            android:textColor="#0B0909"
+            android:textColorHighlight="#49CADA"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_h_id" />
+
+    <Button
+            android:id="@+id/button"
+            android:layout_width="105dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="161dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="162dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="Save"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#3ED6EA"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_units" />
+</androidx.constraintlayout.widget.ConstraintLayout>

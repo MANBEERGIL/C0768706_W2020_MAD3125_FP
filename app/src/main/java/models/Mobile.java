@@ -1,16 +1,23 @@
 package models;
 
-public class Mobile {
+import java.util.Date;
+
+public class Mobile extends Bill{
     private String mobileManufacturerName;
     private  String planName;
     private int mobileNumber;
     private int internetGbUsed;
 
-    public Mobile(String mobileManufacturerName, String planName, int mobileNumber, int internetGbUsed) {
+    public Mobile(String billId,Date billDate,String billType,String mobileManufacturerName, String planName, int mobileNumber, int internetGbUsed) {
+        super(billId,billDate,billType);
         this.mobileManufacturerName = mobileManufacturerName;
         this.planName = planName;
         this.mobileNumber = mobileNumber;
         this.internetGbUsed = internetGbUsed;
+    }
+
+    public Mobile(String billId, Date billDate, String billType) {
+        super(billId, billDate, billType);
     }
 
     public String getMobileManufacturerName() {

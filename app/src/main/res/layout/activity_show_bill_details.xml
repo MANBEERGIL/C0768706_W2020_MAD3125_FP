@@ -7,7 +7,7 @@
         tools:context="ui.ShowBillDetailsActivity">
 
     <EditText
-            android:id="@+id/text_id"
+            android:id="@+id/text_h_id"
             android:layout_width="411dp"
             android:layout_height="50dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -21,6 +21,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_name"></EditText>
 
@@ -30,7 +31,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_id"></EditText>
+            app:layout_constraintTop_toBottomOf="@+id/text_h_id"></EditText>
 
     <EditText
             android:id="@+id/text_number"
@@ -40,6 +41,7 @@
             android:ems="10"
             android:inputType="numberPassword"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_email" />
     "

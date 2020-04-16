@@ -1,6 +1,7 @@
 package ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
      private TextView text_password;
      private Button btn_submit;
      private Switch remember_me;
+
     private    SharedPreferences preferences ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

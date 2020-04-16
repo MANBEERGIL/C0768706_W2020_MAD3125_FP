@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+        android:id = "@+id/log_out"
+        app:showAsAction="ifRoom"
+        android:title="Log out">Log</item>
+<!--    <item android:title="Add Hydro bill"></item>-->
+<!--    <item android:title="Add Mobile bill"></item>-->
+<!--    <item android:title="Add Internet bill"></item>-->
+    <item
+            android:id="@+id/add_customer"
+            app:showAsAction="ifRoom"
+            android:title = "Add New Customer"></item>
+
+</menu>

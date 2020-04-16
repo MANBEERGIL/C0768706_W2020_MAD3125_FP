@@ -1,7 +1,9 @@
 package models;
 
 import java.util.Date;
-
+  enum billType{
+      HYDRO,INTERNET,MOBILR
+  }
 public class Bill {
 
     private  String billId;
@@ -14,7 +16,6 @@ public class Bill {
         this.billId = billId;
         this.billDate = billDate;
         this.billType = billType;
-
     }
 
 
@@ -50,7 +51,9 @@ public class Bill {
         this.totalBillAmount = totalBillAmount;
     }
 
-
+//   public Double totalBill(){
+//        return totalBillAmount;
+//   }
 
 
 }
