@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-            android:id="@+id/text_date"
+            android:id="@+id/text_bill_date"
             android:layout_width="411dp"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_mob_id" />
 
     <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/text_manufacturer"
             android:layout_width="411dp"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -51,7 +51,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_date" />
+            app:layout_constraintTop_toBottomOf="@+id/text_bill_date" />
 
     <EditText
             android:id="@+id/text_planName"
@@ -67,7 +67,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+            app:layout_constraintTop_toBottomOf="@+id/text_manufacturer" />
 
     <EditText
             android:id="@+id/text_net_used"
@@ -117,7 +117,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_planName" />
 
     <Button
-            android:id="@+id/btn_save"
+            android:id="@+id/btn_mobile"
             android:layout_width="128dp"
             android:layout_height="67dp"
             android:layout_marginStart="143dp"

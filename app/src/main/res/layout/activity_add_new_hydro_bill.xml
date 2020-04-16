@@ -34,7 +34,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+            app:layout_constraintTop_toBottomOf="@+id/bill_date" />
 
     <EditText
             android:id="@+id/text_units"
@@ -52,7 +52,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_agency" />
 
     <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/bill_date"
             android:layout_width="411dp"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -68,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_h_id" />
 
     <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_hydro"
             android:layout_width="105dp"
             android:layout_height="74dp"
             android:layout_marginStart="161dp"
