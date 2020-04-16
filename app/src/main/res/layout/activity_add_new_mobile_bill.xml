@@ -6,4 +6,131 @@
         android:layout_height="match_parent"
         tools:context="ui.AddNewMobileBillActivity$AddNewMobileBillActivity">
 
+    <EditText
+            android:id="@+id/text_mob_id"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="Bill ID"
+            android:inputType="textPersonName"
+            android:textColor="#040303"
+            android:textColorHighlight="#43CEDF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+            android:id="@+id/text_date"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Bill Date"
+            android:inputType="textPersonName"
+            android:textColor="#0C0C0C"
+            android:textColorHighlight="#56DFF1"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_mob_id" />
+
+    <EditText
+            android:id="@+id/editText4"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Manufacturer Name"
+            android:inputType="textPersonName"
+            android:textColor="#151212"
+            android:textColorHighlight="#46D6E8"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_date" />
+
+    <EditText
+            android:id="@+id/text_planName"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Plan Name"
+            android:inputType="textPersonName"
+            android:textColor="#171616"
+            android:textColorHighlight="#4AD3E5"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+    <EditText
+            android:id="@+id/text_net_used"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Internet Used"
+            android:inputType="textPersonName"
+            android:textColor="#131010"
+            android:textColorHighlight="#4AD3E5"
+            android:textColorHint="#877F7F"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_mobile_no" />
+
+    <EditText
+            android:id="@+id/text_minute"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Minute Used"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_net_used" />
+
+    <EditText
+            android:id="@+id/text_mobile_no"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Mobile Number"
+            android:inputType="number"
+            android:textColor="#090808"
+            android:textColorHighlight="#46CBDC"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_planName" />
+
+    <Button
+            android:id="@+id/btn_save"
+            android:layout_width="128dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginEnd="140dp"
+            android:layout_marginBottom="110dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="SAVE"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_minute" />
 </androidx.constraintlayout.widget.ConstraintLayout>

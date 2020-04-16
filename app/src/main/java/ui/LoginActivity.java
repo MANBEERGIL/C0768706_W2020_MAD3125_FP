@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
      private TextView text_password;
      private Button btn_submit;
      private Switch remember_me;
+     private ImageView img_profile;
+
 
     private    SharedPreferences preferences ;
     @Override
@@ -36,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         text_password = findViewById(R.id.text_password);
         btn_submit = findViewById(R.id.btn_login);
         remember_me = findViewById(R.id.remember_me);
-
+        img_profile = findViewById(R.id.img_profile);
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
