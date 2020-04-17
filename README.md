@@ -7,3 +7,6 @@ Reference:
 
 
 https://www.journaldev.com/9357/android-actionbar-example-tutorial
+
+
+https://www.journaldev.com/17831/android-splash-screen
