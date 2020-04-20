@@ -7,7 +7,7 @@
         tools:context="ui.ShowBillDetailsActivity">
 
     <EditText
-            android:id="@+id/text_h_id"
+            android:id="@+id/text_custid"
             android:layout_width="411dp"
             android:layout_height="50dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,10 +31,10 @@
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_h_id"></EditText>
+            app:layout_constraintTop_toBottomOf="@+id/text_custid"></EditText>
 
     <EditText
-            android:id="@+id/text_number"
+            android:id="@+id/text_total"
             android:layout_width="411dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"

@@ -18,12 +18,18 @@ import android.widget.EditText;
 
 import com.example.c0768706_w2020_mad3125_fp.R;
 
+import java.sql.Date;
 import java.util.Calendar;
+
+import models.Bill;
+import models.Customers;
+import models.Mobile;
 
 
 public  class AddNewMobileBillActivity extends AppCompatActivity {
 
-        private EditText text_mob_id;
+    public static Customers c1;
+    private EditText text_mob_id;
         private EditText text_bill_date;
         private EditText text_manufacturer;
         private  EditText text_planName;
@@ -32,6 +38,7 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
         private  EditText text_minute;
         private Button btn_mobile;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
+    Customers cust;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +67,8 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
             }else if(text_minute.getText().toString().isEmpty()){
                 text_minute.setError("Enter the minute used");
             }else{
+                Mobile mobile = new Mobile(text_mob_id.getText().toString(), Date.valueOf(text_bill_date.getText().toString()), Bill.billType.MOBILE,text_manufacturer.getText().toString(),text_planName.getText().toString(),text_mobile_no.getText().toString(),Integer.parseInt(text_net_used.getText().toString()),Integer.parseInt(text_minute.getText().toString()));
+                  cust.addBill(mobile,mobile.getBillId());
                 Intent aIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
                 startActivity(aIntent);
             }

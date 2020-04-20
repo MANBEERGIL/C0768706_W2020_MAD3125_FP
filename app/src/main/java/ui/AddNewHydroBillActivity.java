@@ -18,26 +18,36 @@ import android.widget.EditText;
 
 import com.example.c0768706_w2020_mad3125_fp.R;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import models.Bill;
+import models.Customers;
+import models.Hydro;
+import models.Singleton;
+
 public class AddNewHydroBillActivity extends AppCompatActivity {
+    public static Customers c1;
     private EditText text_h_id;
     private EditText bill_date;
     private EditText text_agency;
     private EditText text_units;
     private Button btn_hydro;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
-
+    Customers cust;
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+    private static  int selection = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_hydro_bill);
-        text_h_id = findViewById(R.id.text_h_id);
+        text_h_id = findViewById(R.id.text_custid);
         bill_date = findViewById(R.id.bill_date);
         text_agency = findViewById(R.id.text_agency);
         text_units = findViewById(R.id.text_units);
         btn_hydro = findViewById(R.id.btn_hydro);
-
+        c1 = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customer",selection));
         btn_hydro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +60,8 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 } else if (text_units.getText().toString().isEmpty()) {
                     text_units.setError("Enter the Units consumed");
                 } else {
+                    Hydro hydro = new Hydro(text_h_id.getText().toString(), Date.valueOf(bill_date.getText().toString()), Bill.billType.HYDRO,text_agency.getText().toString(),Integer.parseInt(text_units.getText().toString()) );
+                    cust.addBill(hydro,hydro.getBillId());
                     Intent aIntent = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(aIntent);
                 }

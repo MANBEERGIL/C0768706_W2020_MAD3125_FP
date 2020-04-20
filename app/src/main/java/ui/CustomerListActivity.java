@@ -9,29 +9,42 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toolbar;
 
 import com.example.c0768706_w2020_mad3125_fp.R;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import adapter.CustomerAdapter;
+import models.Customers;
+import models.Singleton;
 
 public class CustomerListActivity extends AppCompatActivity {
     private RecyclerView rvCustomerList;
-    private ArrayList<Customer> customers;
+    private ArrayList<Customers> rvcustomers;
     private CustomerAdapter customerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
         rvCustomerList=findViewById(R.id.rvCustomerList);
-        customersList();
-        customerAdapter=new CustomerAdapter(customers);
+        Singleton singleton = Singleton.getInstance();
+        try {
+            singleton.getData();
+        }catch (ParseException e){
+            e.printStackTrace();
+        }
+        rvcustomers = new ArrayList<>(singleton.getInstance().getAllCustomers());
+        customerAdapter = new CustomerAdapter(rvcustomers);
         RecyclerView.LayoutManager m=new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
         rvCustomerList.setLayoutManager(m);
         rvCustomerList.setAdapter(customerAdapter);
+
     }
+
+
+
    @Override
    public  boolean onCreateOptionsMenu(Menu menu){
        MenuInflater menuInflater = getMenuInflater();
@@ -44,24 +57,15 @@ public class CustomerListActivity extends AppCompatActivity {
             case R.id.log_out:
                 Intent aIntent = new Intent(CustomerListActivity.this,LoginActivity.class);
                 startActivity(aIntent);
-                break;
+                return  true;
             case R.id.add_customer:
                 Intent bIntent = new Intent(CustomerListActivity.this,AddNewCustomer.class);
                 startActivity(bIntent);
-                break;
+                return true;
         }
         return super.onOptionsItemSelected(item);
    }
-    void customersList(){
-        customers=new ArrayList<>();
 
-//     customers.add(new Customer("  Geetanjali Gupta"));
-       customers.add(new Customer("  Manbeer kaur"));
-     customers.add(new Customer("  Komal Subhra"));
-       customers.add(new Customer("  Manpreet Kaur"));
-        customers.add(new Customer("  Geetanjali Gupta"));
-        customers.add(new Customer("  Manbeer kaur"));
-    }
 
 
 

@@ -5,21 +5,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import ui.Customer;
+import models.Customers;
+
 import com.example.c0768706_w2020_mad3125_fp.R;
 import ui.ShowBillDetailsActivity;
 
 import java.util.ArrayList;
 
 public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.CustomerViewHolder>{
-    ArrayList<Customer> customerArrayList;
-    public CustomerAdapter(ArrayList<Customer> customerArrayList) {
+    ArrayList<Customers> customerArrayList;
+    private EditText text_customer_name;
+
+    public CustomerAdapter(ArrayList<Customers> customerArrayList) {
         this.customerArrayList = customerArrayList;
     }
 
@@ -30,7 +34,7 @@ public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.Custo
                 .inflate(R.layout.customer
                         ,parent
                         ,false);
-        CustomerViewHolder c=new CustomerViewHolder(mview);
+        CustomerViewHolder c =new CustomerViewHolder(mview);
 
 
         return c;
@@ -39,18 +43,18 @@ public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.Custo
 
     @Override
     public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
-        Customer mCountry=this.customerArrayList.get(position);
-        holder.txtName.setText(mCountry.getCustomerName());
+        Customers mCountry=this.customerArrayList.get(position);
+        holder.txtName.setText(mCountry.getFirstName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Customer c = customerArrayList.get(position);
-                Toast.makeText(holder.itemView.getContext(),"Customer :  "+c.getCustomerName(),Toast.LENGTH_LONG).show();
+                Customers c = customerArrayList.get(position);
+                Toast.makeText(holder.itemView.getContext(),"Customer :  "+c.getFirstName(),Toast.LENGTH_LONG).show();
                 Log.d("CLICK","HELLO");
 //
 //            if(position ==0) {
              Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-
+               intent.putExtra("customer",position);
               holder.itemView.getContext(). startActivity(intent);
 //            }
 

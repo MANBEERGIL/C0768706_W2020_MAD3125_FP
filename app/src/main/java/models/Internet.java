@@ -4,12 +4,19 @@ import java.util.Date;
 
 public class Internet extends Bill{
     private  String providerName;
-    private  String internetGbUsed;
+    private  int internetGbUsed;
 
-    public Internet(String billId, Date billDate,String billType,String providerName, String internetGbUsed) {
+    public Internet(String billId, Date billDate,billType billType,String providerName,int internetGbUsed) {
         super(billId,billDate,billType);
         this.providerName = providerName;
         this.internetGbUsed = internetGbUsed;
+        this.totalBillAmount = calculateBill();
+    }
+
+    @Override
+    public Double calculateBill() {
+        this.totalBillAmount = (double)internetGbUsed*5;
+        return this.totalBillAmount;
     }
 
     public String getProviderName() {
@@ -20,11 +27,11 @@ public class Internet extends Bill{
         this.providerName = providerName;
     }
 
-    public String getInternetGbUsed() {
+    public int getInternetGbUsed() {
         return internetGbUsed;
     }
 
-    public void setInternetGbUsed(String internetGbUsed) {
+    public void setInternetGbUsed(int internetGbUsed) {
         this.internetGbUsed = internetGbUsed;
     }
 }

@@ -5,18 +5,29 @@ import java.util.Date;
 public class Mobile extends Bill{
     private String mobileManufacturerName;
     private  String planName;
-    private int mobileNumber;
+    private String mobileNumber;
     private int internetGbUsed;
+    private int minuteUsed;
 
-    public Mobile(String billId,Date billDate,String billType,String mobileManufacturerName, String planName, int mobileNumber, int internetGbUsed) {
+    public Mobile(String billId,Date billDate,billType billType,String mobileManufacturerName, String planName, String mobileNumber, int internetGbUsed,int minuteUsed) {
         super(billId,billDate,billType);
         this.mobileManufacturerName = mobileManufacturerName;
         this.planName = planName;
         this.mobileNumber = mobileNumber;
         this.internetGbUsed = internetGbUsed;
+        this.minuteUsed = minuteUsed;
+        this.totalBillAmount = calculateBill();
     }
 
-    public Mobile(String billId, Date billDate, String billType) {
+
+@Override
+
+    public Double calculateBill() {
+        this.totalBillAmount = ((double)this.minuteUsed*3.00) + ((double)this.internetGbUsed*2.5);
+         return this.totalBillAmount;
+    }
+
+    public Mobile(String billId, Date billDate, billType billType) {
         super(billId, billDate, billType);
     }
 
@@ -36,11 +47,11 @@ public class Mobile extends Bill{
         this.planName = planName;
     }
 
-    public int getMobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(int mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 

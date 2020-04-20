@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -22,8 +23,8 @@ import com.example.c0768706_w2020_mad3125_fp.R;
 import java.util.prefs.Preferences;
 
 public class LoginActivity extends AppCompatActivity {
-     private TextView text_email;
-     private TextView text_password;
+     private EditText text_email;
+     private EditText text_password;
      private Button btn_submit;
      private Switch remember_me;
      private ImageView img_profile;
