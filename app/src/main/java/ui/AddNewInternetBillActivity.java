@@ -29,6 +29,7 @@ import models.Customers;
 import models.Internet;
 
 public class AddNewInternetBillActivity extends AppCompatActivity {
+    public static Customers dataobj;
     private EditText text_net_id;
     private EditText text_date;
     private  EditText text_provider_name;
@@ -36,7 +37,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
     private Button btn_internet;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
     Customers cust;
-    public static Customers c1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +64,9 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
                     text_internet_used.setError("Enter the Units consumed");
                 }else{
                     Internet internet = new Internet(text_net_id.getText().toString(), Date.valueOf(text_date.getText().toString()), Bill.billType.INTERNET,text_provider_name.getText().toString(),Integer.parseInt(text_internet_used.getText().toString()));
-                    cust.addBill(internet,internet.getBillId());
-                    Intent aIntent = new Intent(AddNewInternetBillActivity.this,ShowBillDetailsActivity.class);
-                    startActivity(aIntent);
+                    dataobj.addBill(internet,internet.getBillId());
+                    Intent dIntent = new Intent(AddNewInternetBillActivity.this,ShowBillDetailsActivity.class);
+                    startActivity(dIntent);
                 }
             }
         });
@@ -106,8 +107,8 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
     public  boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.back:
-                Intent aIntent = new Intent(AddNewInternetBillActivity.this,ShowBillDetailsActivity.class);
-                startActivity(aIntent);
+                Intent eIntent = new Intent(AddNewInternetBillActivity.this,ShowBillDetailsActivity.class);
+                startActivity(eIntent);
                 break;}
         return super.onOptionsItemSelected(item);}
 }

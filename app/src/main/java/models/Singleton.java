@@ -8,23 +8,20 @@ import java.util.HashMap;
 
 public class Singleton {
     private static  Singleton dataobj = new Singleton();
-     public static Singleton getInstance(){
-         return  dataobj;
-     }
-     private Singleton(){}
-       private  HashMap<String,Customers> customersHashMap = new HashMap<>();
-
-    public HashMap<String, Customers> getCustomersHashMap() {
-        return this.customersHashMap;
-    }
-    public  ArrayList<Customers> getAllCustomers(){
-        Collection<Customers>collection = customersHashMap.values();
-        ArrayList<Customers>customersArrayList =new ArrayList<Customers>(collection);
-       return customersArrayList;
+    private  HashMap<String,Customers> customersHashMap = new HashMap<>();
+    private Singleton(){}
+    public static Singleton getInstance(){
+        return  dataobj;
     }
     public void addCustomers(String customerId, Customers customers){
       this.customersHashMap.put(customers.getCustomerId(),customers);
     }
+    public  ArrayList<Customers> getAllCustomers(){
+        Collection<Customers>collection = customersHashMap.values();
+        ArrayList<Customers>customersArrayList =new ArrayList<Customers>(collection);
+        return customersArrayList;
+    }
+
     public  void getData() throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
 //        Customers co = new Customers("c01","Manbeer","Kaur","manbeergill545@gmail.com","Female","20/04/1997");

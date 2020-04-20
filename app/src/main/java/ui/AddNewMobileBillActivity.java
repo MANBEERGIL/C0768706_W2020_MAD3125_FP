@@ -28,7 +28,7 @@ import models.Mobile;
 
 public  class AddNewMobileBillActivity extends AppCompatActivity {
 
-    public static Customers c1;
+    public static Customers dataobj;
     private EditText text_mob_id;
         private EditText text_bill_date;
         private EditText text_manufacturer;
@@ -68,9 +68,9 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
                 text_minute.setError("Enter the minute used");
             }else{
                 Mobile mobile = new Mobile(text_mob_id.getText().toString(), Date.valueOf(text_bill_date.getText().toString()), Bill.billType.MOBILE,text_manufacturer.getText().toString(),text_planName.getText().toString(),text_mobile_no.getText().toString(),Integer.parseInt(text_net_used.getText().toString()),Integer.parseInt(text_minute.getText().toString()));
-                  cust.addBill(mobile,mobile.getBillId());
-                Intent aIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
-                startActivity(aIntent);
+                  dataobj.addBill(mobile,mobile.getBillId());
+                Intent fIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
+                startActivity(fIntent);
             }
                 }
           });
@@ -113,8 +113,8 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
         public  boolean onOptionsItemSelected(MenuItem item){
             switch (item.getItemId()){
                 case R.id.back:
-                    Intent aIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
-                    startActivity(aIntent);
+                    Intent gIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
+                    startActivity(gIntent);
                     break;}
             return super.onOptionsItemSelected(item);}
     }

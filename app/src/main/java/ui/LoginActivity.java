@@ -64,12 +64,12 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("Password", text_password.getText().toString());
                         editor.apply();
 
-                        Intent mIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
-                        startActivity(mIntent);
+                        Intent jIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
+                        startActivity(jIntent);
                     } else {
                         editor.clear().apply();
-                        Intent mIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
-                        startActivity(mIntent);
+                        Intent kIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
+                        startActivity(kIntent);
                     }
                 } else {
                     alertBox(LoginActivity.this, "Invalid Value", "Invalid Email or Password ");

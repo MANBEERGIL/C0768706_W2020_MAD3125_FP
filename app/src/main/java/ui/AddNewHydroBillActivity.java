@@ -28,14 +28,14 @@ import models.Hydro;
 import models.Singleton;
 
 public class AddNewHydroBillActivity extends AppCompatActivity {
-    public static Customers c1;
+    public static Customers dataobj;
     private EditText text_h_id;
     private EditText bill_date;
     private EditText text_agency;
     private EditText text_units;
     private Button btn_hydro;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
-    Customers cust;
+
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
     private static  int selection = 0;
     @Override
@@ -47,7 +47,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
         text_agency = findViewById(R.id.text_agency);
         text_units = findViewById(R.id.text_units);
         btn_hydro = findViewById(R.id.btn_hydro);
-        c1 = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customer",selection));
+//        dataobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",selection));
         btn_hydro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,9 +61,9 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                     text_units.setError("Enter the Units consumed");
                 } else {
                     Hydro hydro = new Hydro(text_h_id.getText().toString(), Date.valueOf(bill_date.getText().toString()), Bill.billType.HYDRO,text_agency.getText().toString(),Integer.parseInt(text_units.getText().toString()) );
-                    cust.addBill(hydro,hydro.getBillId());
-                    Intent aIntent = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
-                    startActivity(aIntent);
+                    dataobj.addBill(hydro,hydro.getBillId());
+                    Intent bIntent = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
+                    startActivity(bIntent);
                 }
 
             }
@@ -104,8 +104,8 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
         public boolean onOptionsItemSelected (MenuItem item){
             switch (item.getItemId()) {
                 case R.id.back:
-                    Intent aIntent = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
-                    startActivity(aIntent);
+                    Intent cIntent = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
+                    startActivity(cIntent);
                     break;
             }
             return super.onOptionsItemSelected(item);

@@ -11,7 +11,9 @@ import android.widget.EditText;
 
 import com.example.c0768706_w2020_mad3125_fp.R;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 
 import models.Bill;
 import models.Customers;
@@ -29,12 +31,14 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bill_details);
-        cust = Singleton.getInstance().getCustomersHashMap().get(getIntent().getIntExtra("customer",selection));
+        cust = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customer",selection));
           text_custid.setText(cust.getCustomerId());
           text_name.setText(cust.getFullName());
           text_email.setText(cust.getEmail());
-          text_total.setText(cust.getTotalBillToPay().toString());
            bill= cust.getBills();
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+           format.setCurrency(Currency.getInstance("CAD"));
+           text_total.setText(format.format(cust.getTotalBillToPay()));
 //        Intent bIntent =  getIntent();
 //        cust = bIntent.getParcelableExtra("customer");
 }
@@ -48,21 +52,21 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
     public  boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.add_hydro:
-                AddNewHydroBillActivity.c1 = cust;
-                Intent aIntent = new Intent(ShowBillDetailsActivity.this,AddNewHydroBillActivity.class);
-                aIntent.putExtra("customers",cust);
-                startActivity(aIntent);
-                break;
+                AddNewHydroBillActivity.dataobj = cust;
+                Intent lIntent = new Intent(ShowBillDetailsActivity.this,AddNewHydroBillActivity.class);
+                lIntent.putExtra("customers",cust);
+                startActivity(lIntent);
+                return true;
             case R.id.add_internet:
-                AddNewInternetBillActivity .c1 = cust;
-                Intent bIntent = new Intent(ShowBillDetailsActivity.this,AddNewInternetBillActivity.class);
-                startActivity(bIntent);
-                break;
+                AddNewInternetBillActivity .dataobj = cust;
+                Intent mIntent = new Intent(ShowBillDetailsActivity.this,AddNewInternetBillActivity.class);
+                startActivity(mIntent);
+                return  true;
             case R.id.add_mobile:
-                AddNewMobileBillActivity.c1 = cust;
-                Intent cIntent = new Intent(ShowBillDetailsActivity.this,AddNewMobileBillActivity.class);
-                startActivity(cIntent);
-                break;
+                AddNewMobileBillActivity.dataobj = cust;
+                Intent nIntent = new Intent(ShowBillDetailsActivity.this,AddNewMobileBillActivity.class);
+                startActivity(nIntent);
+                return  true;
 
         }
         return super.onOptionsItemSelected(item);

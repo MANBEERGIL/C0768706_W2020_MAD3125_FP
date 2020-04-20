@@ -55,12 +55,12 @@ public class CustomerListActivity extends AppCompatActivity {
    public  boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.log_out:
-                Intent aIntent = new Intent(CustomerListActivity.this,LoginActivity.class);
-                startActivity(aIntent);
+                Intent hIntent = new Intent(CustomerListActivity.this,LoginActivity.class);
+                startActivity(hIntent);
                 return  true;
             case R.id.add_customer:
-                Intent bIntent = new Intent(CustomerListActivity.this,AddNewCustomer.class);
-                startActivity(bIntent);
+                Intent iIntent = new Intent(CustomerListActivity.this,AddNewCustomer.class);
+                startActivity(iIntent);
                 return true;
         }
         return super.onOptionsItemSelected(item);
