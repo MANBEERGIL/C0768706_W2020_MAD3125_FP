@@ -35,17 +35,14 @@ public class CustomerListActivity extends AppCompatActivity {
         }catch (ParseException e){
             e.printStackTrace();
         }
-        rvcustomers = new ArrayList<>(singleton.getInstance().getAllCustomers());
+        rvcustomers = new ArrayList<>(Singleton.getInstance().getAllCustomers());
         customerAdapter = new CustomerAdapter(rvcustomers);
         RecyclerView.LayoutManager m=new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
         rvCustomerList.setLayoutManager(m);
         rvCustomerList.setAdapter(customerAdapter);
 
     }
-
-
-
-   @Override
+    @Override
    public  boolean onCreateOptionsMenu(Menu menu){
        MenuInflater menuInflater = getMenuInflater();
        menuInflater.inflate(R.menu.menu_item,menu);
@@ -62,11 +59,9 @@ public class CustomerListActivity extends AppCompatActivity {
                 Intent iIntent = new Intent(CustomerListActivity.this,AddNewCustomer.class);
                 startActivity(iIntent);
                 return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+
    }
-
-
-
-
 }

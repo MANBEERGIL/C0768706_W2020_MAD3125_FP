@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.CustomerViewHolder>{
     ArrayList<Customers> customerArrayList;
+    private EditText text_customer_name;
 
     public CustomerAdapter(ArrayList<Customers> customerArrayList) {
         this.customerArrayList = customerArrayList;
@@ -43,12 +44,12 @@ public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.Custo
     @Override
     public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
         Customers mCountry=this.customerArrayList.get(position);
-        holder.txtName.setText(mCountry.getFullName());
+        holder.txtName.setText(mCountry.getFirstName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Customers cust = customerArrayList.get(position);
-               Toast.makeText(holder.itemView.getContext(),"Customer :  "+cust.getFullName(),Toast.LENGTH_LONG).show();
+                Customers c = customerArrayList.get(position);
+                Toast.makeText(holder.itemView.getContext(),"Customer :  "+c.getFirstName(),Toast.LENGTH_LONG).show();
                 Log.d("CLICK","HELLO");
 //
 //            if(position ==0) {
@@ -57,9 +58,12 @@ public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.Custo
               holder.itemView.getContext(). startActivity(intent);
 //            }
 
+
             }
         });
     }
+
+
 
     @Override
     public int getItemCount() {

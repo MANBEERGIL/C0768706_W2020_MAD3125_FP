@@ -93,9 +93,6 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
             }
         };
 
-
-
-
     }
     @Override
     public  boolean onCreateOptionsMenu(Menu menu){
@@ -105,10 +102,13 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
     }
     @Override
     public  boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.back:
-                Intent eIntent = new Intent(AddNewInternetBillActivity.this,ShowBillDetailsActivity.class);
+                Intent eIntent = new Intent(AddNewInternetBillActivity.this, ShowBillDetailsActivity.class);
                 startActivity(eIntent);
-                break;}
-        return super.onOptionsItemSelected(item);}
+                return true;
+            default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
 }

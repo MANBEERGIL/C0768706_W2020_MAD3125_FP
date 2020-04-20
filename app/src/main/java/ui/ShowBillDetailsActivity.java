@@ -31,11 +31,15 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bill_details);
-        cust = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customer",selection));
-          text_custid.setText(cust.getCustomerId());
-          text_name.setText(cust.getFullName());
+        cust = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",0));
+        text_custid = findViewById(R.id.text_custid);
+        text_name = findViewById(R.id.text_name);
+        text_email = findViewById(R.id.text_email);
+        text_total = findViewById(R.id.text_total);
+        text_custid.setText(cust.getCustomerId());
+          text_name.setText(cust.getFirstName());
           text_email.setText(cust.getEmail());
-           bill= cust.getBills();
+           bill= cust.getBillsArray();
         NumberFormat format = NumberFormat.getCurrencyInstance();
            format.setCurrency(Currency.getInstance("CAD"));
            text_total.setText(format.format(cust.getTotalBillToPay()));
@@ -50,26 +54,27 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
     }
     @Override
     public  boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.add_hydro:
                 AddNewHydroBillActivity.dataobj = cust;
-                Intent lIntent = new Intent(ShowBillDetailsActivity.this,AddNewHydroBillActivity.class);
-                lIntent.putExtra("customers",cust);
+                Intent lIntent = new Intent(ShowBillDetailsActivity.this, AddNewHydroBillActivity.class);
+                lIntent.putExtra("customers", cust);
                 startActivity(lIntent);
                 return true;
             case R.id.add_internet:
-                AddNewInternetBillActivity .dataobj = cust;
-                Intent mIntent = new Intent(ShowBillDetailsActivity.this,AddNewInternetBillActivity.class);
+                AddNewInternetBillActivity.dataobj = cust;
+                Intent mIntent = new Intent(ShowBillDetailsActivity.this, AddNewInternetBillActivity.class);
                 startActivity(mIntent);
-                return  true;
+                return true;
             case R.id.add_mobile:
                 AddNewMobileBillActivity.dataobj = cust;
-                Intent nIntent = new Intent(ShowBillDetailsActivity.this,AddNewMobileBillActivity.class);
+                Intent nIntent = new Intent(ShowBillDetailsActivity.this, AddNewMobileBillActivity.class);
                 startActivity(nIntent);
-                return  true;
+                return true;
 
+            default:
+            return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 }
 

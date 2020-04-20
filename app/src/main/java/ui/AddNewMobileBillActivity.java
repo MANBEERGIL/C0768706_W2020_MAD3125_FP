@@ -98,10 +98,6 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
                 }
             };
 
-
-
-
-
         }
         @Override
         public  boolean onCreateOptionsMenu(Menu menu){
@@ -115,7 +111,10 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
                 case R.id.back:
                     Intent gIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
                     startActivity(gIntent);
-                    break;}
-            return super.onOptionsItemSelected(item);}
+                    return  true ;
+                default:
+                    return super.onOptionsItemSelected(item);}
+            }
+
     }
 

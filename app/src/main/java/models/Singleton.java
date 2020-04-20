@@ -26,10 +26,10 @@ public class Singleton {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
 //        Customers co = new Customers("c01","Manbeer","Kaur","manbeergill545@gmail.com","Female","20/04/1997");
 //        Customers ca = new Customers("c02","Manpreet","Kaur","manpreetsran545@gmail.com","Female","12/12/1997");
-        Customers c1 = new Customers("c03","Harminder","Kaur","harminder545@gmail.com","Female","24/06/1998");
-        Customers c2 = new Customers("c04","Rupinder","Kaur","rupindergill545@gmail.com","Female","23/12/1994");
-        Customers c3 = new Customers("c01","Manbeer","Kaur","manbeergill545@gmail.com","Female","20/04/1997");
-        Customers c4 = new Customers("c02","Manpreet","Kaur","manpreetsran545@gmail.com","Female","12/12/1997");
+        Customers c1 = new Customers("c01","Harminder","Kaur","harminder545@gmail.com","Female","24/06/1998");
+        Customers c2 = new Customers("c02","Rupinder","Kaur","rupindergill545@gmail.com","Female","23/12/1994");
+        Customers c3 = new Customers("c03","Manbeer","Kaur","manbeergill545@gmail.com","Female","20/04/1997");
+        Customers c4 = new Customers("c04","Manpreet","Kaur","manpreetsran545@gmail.com","Female","12/12/1997");
 
 
 

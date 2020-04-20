@@ -6,7 +6,6 @@ import android.os.Parcelable;
 
 import androidx.annotation.RequiresApi;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -30,6 +29,7 @@ public class Customers implements Parcelable {
         this.email = email;
         this.birthDate= dob;
         this.gender = gender;
+        this.fullName = getFullName();
     }
 
    

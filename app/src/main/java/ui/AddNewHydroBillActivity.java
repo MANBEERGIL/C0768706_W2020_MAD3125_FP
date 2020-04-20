@@ -47,7 +47,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
         text_agency = findViewById(R.id.text_agency);
         text_units = findViewById(R.id.text_units);
         btn_hydro = findViewById(R.id.btn_hydro);
-//        dataobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",selection));
+       dataobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",selection));
         btn_hydro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,9 +106,9 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 case R.id.back:
                     Intent cIntent = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(cIntent);
-                    break;
+                default:
+                    return super.onOptionsItemSelected(item);
             }
-            return super.onOptionsItemSelected(item);
         }
 
 }
