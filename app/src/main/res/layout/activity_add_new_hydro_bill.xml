@@ -51,22 +51,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_agency" />
 
-    <EditText
-            android:id="@+id/bill_date"
-            android:layout_width="411dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Bill Date"
-            android:inputType="date"
-            android:textColor="#0B0909"
-            android:textColorHighlight="#49CADA"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_custid" />
-
     <Button
             android:id="@+id/btn_hydro"
             android:layout_width="105dp"
@@ -82,4 +66,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_units" />
+
+    <EditText
+            android:id="@+id/bill_date"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Bill Date"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_custid" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

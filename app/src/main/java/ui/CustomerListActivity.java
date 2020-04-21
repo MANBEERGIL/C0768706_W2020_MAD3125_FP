@@ -37,7 +37,7 @@ public class CustomerListActivity extends AppCompatActivity {
         }
         rvcustomers = new ArrayList<>(Singleton.getInstance().getAllCustomers());
         customerAdapter = new CustomerAdapter(rvcustomers);
-        RecyclerView.LayoutManager m=new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
+        RecyclerView.LayoutManager m =new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
         rvCustomerList.setLayoutManager(m);
         rvCustomerList.setAdapter(customerAdapter);
 

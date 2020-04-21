@@ -1,12 +1,10 @@
 package models;
 
-import java.util.Date;
-
 public class Hydro extends  Bill{
     private  String agencyName;
     private int unitConsumed;
 
-    public Hydro(String billId,  Date billDate,billType billType, String agencyName, int unitConsumed) {
+    public Hydro(String billId, String billDate, billType billType, String agencyName, int unitConsumed) {
         super(billId,billDate,billType);
         this.agencyName = agencyName;
         this.unitConsumed = unitConsumed;

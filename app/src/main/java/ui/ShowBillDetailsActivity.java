@@ -1,6 +1,8 @@
 package ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Currency;
 
+import adapter.BillAdapter;
 import models.Bill;
 import models.Customers;
 import models.Singleton;
@@ -26,23 +29,38 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
      private EditText text_email;
      private EditText text_total;
      private ArrayList<Bill>bill;
-     private int selection = 0;
+     private  static int selection = 0;
+     private RecyclerView rvBill;
+     private  ArrayList<Bill>arrayList;
+     private  BillAdapter billAdapter;
+     Customers c;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bill_details);
-        cust = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",0));
+        getSupportActionBar().setTitle("Bill Details");
+        Intent pIntent = getIntent();
+        c =pIntent.getParcelableExtra("customer");
+
+        cust = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customer selected",selection));
         text_custid = findViewById(R.id.text_custid);
         text_name = findViewById(R.id.text_name);
         text_email = findViewById(R.id.text_email);
         text_total = findViewById(R.id.text_total);
-        text_custid.setText(cust.getCustomerId());
-          text_name.setText(cust.getFirstName());
-          text_email.setText(cust.getEmail());
-           bill= cust.getBillsArray();
-        NumberFormat format = NumberFormat.getCurrencyInstance();
+        text_total.setTransformationMethod(null);
+        text_custid.setText("Customer ID:"+cust.getCustomerId());
+          text_name.setText("Customer Name:"+cust.getFirstName());
+          text_email.setText("Email Address:"+cust.getEmail());
+          NumberFormat format = NumberFormat.getCurrencyInstance();
            format.setCurrency(Currency.getInstance("CAD"));
            text_total.setText(format.format(cust.getTotalBillToPay()));
+        bill = cust.getBillsArray();
+        rvBill = findViewById(R.id.rvBill);
+        billAdapter = new BillAdapter(this.bill);
+        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        rvBill.setLayoutManager(layoutManager1);
+        rvBill.setAdapter(billAdapter);
 //        Intent bIntent =  getIntent();
 //        cust = bIntent.getParcelableExtra("customer");
 }

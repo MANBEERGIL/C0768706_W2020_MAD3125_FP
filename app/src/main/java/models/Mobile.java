@@ -9,7 +9,7 @@ public class Mobile extends Bill{
     private int internetGbUsed;
     private int minuteUsed;
 
-    public Mobile(String billId,Date billDate,billType billType,String mobileManufacturerName, String planName, String mobileNumber, int internetGbUsed,int minuteUsed) {
+    public Mobile(String billId,String billDate,billType billType,String mobileManufacturerName, String planName, String mobileNumber, int internetGbUsed,int minuteUsed) {
         super(billId,billDate,billType);
         this.mobileManufacturerName = mobileManufacturerName;
         this.planName = planName;
@@ -27,7 +27,7 @@ public class Mobile extends Bill{
          return this.totalBillAmount;
     }
 
-    public Mobile(String billId, Date billDate, billType billType) {
+    public Mobile(String billId, String billDate, billType billType) {
         super(billId, billDate, billType);
     }
 
@@ -61,5 +61,13 @@ public class Mobile extends Bill{
 
     public void setInternetGbUsed(int internetGbUsed) {
         this.internetGbUsed = internetGbUsed;
+    }
+
+    public int getMinuteUsed() {
+        return minuteUsed;
+    }
+
+    public void setMinuteUsed(int minuteUsed) {
+        this.minuteUsed = minuteUsed;
     }
 }

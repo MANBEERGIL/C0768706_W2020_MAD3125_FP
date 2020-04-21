@@ -6,7 +6,7 @@ public class Internet extends Bill{
     private  String providerName;
     private  int internetGbUsed;
 
-    public Internet(String billId, Date billDate,billType billType,String providerName,int internetGbUsed) {
+    public Internet(String billId, String billDate,billType billType,String providerName,int internetGbUsed) {
         super(billId,billDate,billType);
         this.providerName = providerName;
         this.internetGbUsed = internetGbUsed;
@@ -31,7 +31,7 @@ public class Internet extends Bill{
         return internetGbUsed;
     }
 
-    public void setInternetGbUsed(int internetGbUsed) {
+    public void setInternetGbUsed(int internetUsed) {
         this.internetGbUsed = internetGbUsed;
     }
 }

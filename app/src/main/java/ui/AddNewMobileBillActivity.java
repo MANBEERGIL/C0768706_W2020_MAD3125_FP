@@ -38,7 +38,6 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
         private  EditText text_minute;
         private Button btn_mobile;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
-    Customers cust;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +46,16 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
            text_mob_id = findViewById(R.id.text_mob_id);
           text_manufacturer = findViewById(R.id.text_manufacturer);
           text_planName = findViewById(R.id.text_planName);
+          btn_mobile = findViewById(R.id.btn_mobile);
+          text_bill_date = findViewById(R.id.text_bill_date);
+          text_mobile_no = findViewById(R.id.text_mobile_no);
+          text_net_used = findViewById(R.id.text_net_used);
+          text_minute = findViewById(R.id.text_minute);
           btn_mobile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-
-            if(text_mob_id.getText().toString().isEmpty()){
-                text_mob_id.setError("Enter the bill Id");
+                    if(text_mob_id.getText().toString().isEmpty()){
+                        text_mob_id.setError("Enter the bill Id");
             }else if(text_bill_date.getText().toString().isEmpty()){
                text_bill_date.setError("Enter the bill date");
             }else if(text_manufacturer.getText().toString().isEmpty()){
@@ -67,7 +69,7 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
             }else if(text_minute.getText().toString().isEmpty()){
                 text_minute.setError("Enter the minute used");
             }else{
-                Mobile mobile = new Mobile(text_mob_id.getText().toString(), Date.valueOf(text_bill_date.getText().toString()), Bill.billType.MOBILE,text_manufacturer.getText().toString(),text_planName.getText().toString(),text_mobile_no.getText().toString(),Integer.parseInt(text_net_used.getText().toString()),Integer.parseInt(text_minute.getText().toString()));
+                Mobile mobile = new Mobile(text_mob_id.getText().toString(), text_bill_date.getText().toString(), Bill.billType.MOBILE,text_manufacturer.getText().toString(),text_planName.getText().toString(),text_mobile_no.getText().toString(),Integer.parseInt(text_net_used.getText().toString()),Integer.parseInt(text_minute.getText().toString()));
                   dataobj.addBill(mobile,mobile.getBillId());
                 Intent fIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
                 startActivity(fIntent);

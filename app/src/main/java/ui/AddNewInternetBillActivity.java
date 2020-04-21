@@ -21,7 +21,6 @@ import android.widget.EditText;
 import com.example.c0768706_w2020_mad3125_fp.R;
 
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import models.Bill;
@@ -36,7 +35,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
     private EditText text_internet_used;
     private Button btn_internet;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
-    Customers cust;
+
 
 
     @Override
@@ -47,13 +46,12 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
         text_date = findViewById(R.id.text_bill_date);
         text_provider_name = findViewById(R.id.text_provider_name);
         text_internet_used = findViewById(R.id.text_internet_used);
-        btn_internet = findViewById(R.id.btn_save);
+        btn_internet = findViewById(R.id.btn_internet);
 
         btn_internet.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                String date = text_date.getText().toString();
                 if(text_net_id.getText().toString().isEmpty()){
                     text_net_id.setError("Enter the bill Id");
                 }else if(text_date.getText().toString().isEmpty()){
@@ -63,7 +61,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
                 }else if(text_internet_used.getText().toString().isEmpty()){
                     text_internet_used.setError("Enter the Units consumed");
                 }else{
-                    Internet internet = new Internet(text_net_id.getText().toString(), Date.valueOf(text_date.getText().toString()), Bill.billType.INTERNET,text_provider_name.getText().toString(),Integer.parseInt(text_internet_used.getText().toString()));
+                    Internet internet = new Internet(text_net_id.getText().toString(), text_date.getText().toString(), Bill.billType.INTERNET,text_provider_name.getText().toString(),Integer.parseInt(text_internet_used.getText().toString()));
                     dataobj.addBill(internet,internet.getBillId());
                     Intent dIntent = new Intent(AddNewInternetBillActivity.this,ShowBillDetailsActivity.class);
                     startActivity(dIntent);

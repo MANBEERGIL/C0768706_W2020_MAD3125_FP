@@ -143,7 +143,8 @@ public class Customers implements Parcelable {
     }
      public  ArrayList <Bill> getBillsArray() {
      Collection<Bill> objBills = billHashMap.values();
-     return new ArrayList<>(objBills);
+     ArrayList<Bill> arrayList = new ArrayList<>(objBills);
+     return arrayList;
 
     }
 
@@ -155,13 +156,9 @@ public class Customers implements Parcelable {
        }
        return custTotalBill;
     }
-
-
-
-
-        public void addBill(Bill bill, String billId){
+      public void addBill(Bill bill, String billId){
         billHashMap.put(billId,bill);
-       this.totalBillToPay = this.totalBillToPay + bill.totalBillAmount;
+        totalBillToPay += bill.totalBillAmount;
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void removeBill(Bill bill, String billId){

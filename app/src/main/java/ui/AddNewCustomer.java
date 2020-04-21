@@ -14,8 +14,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.c0768706_w2020_mad3125_fp.R;
@@ -52,6 +50,7 @@ public class AddNewCustomer extends AppCompatActivity {
         radio_female = findViewById(R.id.radio_female);
         radio_male = findViewById(R.id.radio_male);
         radio_others = findViewById(R.id.radio_others);
+        btn_save  = findViewById(R.id.btn_save);
         text_birth_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

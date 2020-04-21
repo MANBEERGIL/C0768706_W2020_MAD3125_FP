@@ -2,6 +2,7 @@ package ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -42,12 +43,13 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_hydro_bill);
+        getSupportActionBar().setTitle("Add Hydro Bill");
         text_h_id = findViewById(R.id.text_custid);
         bill_date = findViewById(R.id.bill_date);
         text_agency = findViewById(R.id.text_agency);
         text_units = findViewById(R.id.text_units);
         btn_hydro = findViewById(R.id.btn_hydro);
-       dataobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",selection));
+      // dataobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",selection));
         btn_hydro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,8 +62,8 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 } else if (text_units.getText().toString().isEmpty()) {
                     text_units.setError("Enter the Units consumed");
                 } else {
-                    Hydro hydro = new Hydro(text_h_id.getText().toString(), Date.valueOf(bill_date.getText().toString()), Bill.billType.HYDRO,text_agency.getText().toString(),Integer.parseInt(text_units.getText().toString()) );
-                    dataobj.addBill(hydro,hydro.getBillId());
+                    Hydro hydro1 = new Hydro(text_h_id.getText().toString(), bill_date.getText().toString(), Bill.billType.HYDRO,text_agency.getText().toString(),Integer.parseInt(text_units.getText().toString()) );
+                    dataobj.addBill(hydro1,hydro1.getBillId());
                     Intent bIntent = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(bIntent);
                 }

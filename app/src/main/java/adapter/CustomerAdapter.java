@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.CustomerViewHolder>{
     ArrayList<Customers> customerArrayList;
-    private EditText text_customer_name;
+
 
     public CustomerAdapter(ArrayList<Customers> customerArrayList) {
         this.customerArrayList = customerArrayList;
@@ -48,22 +48,18 @@ public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.Custo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Customers c = customerArrayList.get(position);
-                Toast.makeText(holder.itemView.getContext(),"Customer :  "+c.getFirstName(),Toast.LENGTH_LONG).show();
+                final Customers ab = customerArrayList.get(position);
+                Toast.makeText(holder.itemView.getContext(),"Customer :  "+ab.getFirstName(),Toast.LENGTH_LONG).show();
                 Log.d("CLICK","HELLO");
-//
+
 //            if(position ==0) {
              Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-               intent.putExtra("customer",position);
-              holder.itemView.getContext(). startActivity(intent);
+               intent.putExtra("customer selected",position);
+              holder.itemView.getContext().startActivity(intent);
 //            }
-
-
             }
         });
     }
-
-
 
     @Override
     public int getItemCount() {
