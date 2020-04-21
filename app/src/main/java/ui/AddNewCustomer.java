@@ -39,6 +39,7 @@ public class AddNewCustomer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle("Add New Customer");
         setContentView(R.layout.activity_add_new_customer);
         text_custId = findViewById(R.id.text_custid);
         text_birth_date = findViewById(R.id.text_birth_date);

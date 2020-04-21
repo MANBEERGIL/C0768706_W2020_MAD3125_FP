@@ -19,7 +19,6 @@ public class Customers implements Parcelable {
    private String birthDate;
    private String gender;
    private HashMap<String,Bill>billHashMap = new HashMap<String, Bill>();
-   private ArrayList<Bill> bills;
    private  Double totalBillToPay = 0.0;
 
     public Customers(String customerId, String firstName, String lastName, String email,String gender,String dob) {
@@ -29,7 +28,7 @@ public class Customers implements Parcelable {
         this.email = email;
         this.birthDate= dob;
         this.gender = gender;
-        this.fullName = getFullName();
+        this.fullName = fullName();
     }
 
    
@@ -121,13 +120,7 @@ public class Customers implements Parcelable {
         this.gender = gender;
     }
 
-    public ArrayList<Bill> getBills() {
-        return bills;
-    }
 
-    public void setBills(ArrayList<Bill> bills) {
-        this.bills = bills;
-    }
 
     public Double getTotalBillToPay() {
         return totalBillToPay;
@@ -148,16 +141,9 @@ public class Customers implements Parcelable {
 
     }
 
-    public  Double getTotalBill(){
-       double custTotalBill = 0.0;
-       for(Bill b:billHashMap.values()){
 
-           custTotalBill += b.totalBillAmount;
-       }
-       return custTotalBill;
-    }
       public void addBill(Bill bill, String billId){
-        billHashMap.put(billId,bill);
+        this.billHashMap.put(billId,bill);
         totalBillToPay += bill.totalBillAmount;
     }
     @RequiresApi(api = Build.VERSION_CODES.N)

@@ -50,17 +50,17 @@ public class BillAdapter  extends RecyclerView.Adapter<BillAdapter.BillViewHolde
          @Override
          public void onClick(View v) {
              Bill bill = arrayList.get(position);
-             if (bill.getBillType().equals("HYDRO")){
+             if (bill.getBillType().equals("Hydro")){
                  Hydro h = (Hydro)mBill;
                  textView4.setText("Agency Nmae :" +((Hydro) mBill).getAgencyName());
                  textView5.setText("Units Consumed :" +((Hydro) mBill).getUnitConsumed());
              }
-             else if(bill.getBillType().equals("INTERNET")){
+             else if(bill.getBillType().equals("Internet")){
                  Internet i = (Internet)mBill;
                  textView4.setText("Provider Name:" +((Internet) mBill).getProviderName());
                  textView5.setText("Internet Usage:" +((Internet) mBill).getInternetGbUsed());
              }
-             else if(bill.getBillType().equals("MOBILE")){
+             else if(bill.getBillType().equals("Mobile")){
                  Mobile m = (Mobile)mBill;
                  textView4.setText("Manufacturer Name:"+ ((Mobile) mBill).getMobileManufacturerName());
                  textView5.setText("Plan Name:" +((Mobile) mBill).getPlanName());

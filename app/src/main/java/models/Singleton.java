@@ -14,7 +14,7 @@ public class Singleton {
         return  dataobj;
     }
     public void addCustomers(String customerId, Customers customers){
-      this.customersHashMap.put(customers.getCustomerId(),customers);
+      this.customersHashMap.put(customerId,customers);
     }
     public  ArrayList<Customers> getAllCustomers(){
         Collection<Customers>collection = customersHashMap.values();
@@ -31,12 +31,19 @@ public class Singleton {
         Customers c3 = new Customers("c03","Manbeer","Kaur","manbeergill545@gmail.com","Female","20/04/1997");
         Customers c4 = new Customers("c04","Manpreet","Kaur","manpreetsran545@gmail.com","Female","12/12/1997");
 
+        addCustomers(c1.getCustomerId(),c1);
+        addCustomers(c2.getCustomerId(),c2);
+        addCustomers(c3.getCustomerId(),c3);
+        addCustomers(c4.getCustomerId(),c4);
 
 
-        customersHashMap.put(c1.getCustomerId(),c1);
-        customersHashMap.put(c2.getCustomerId(),c2);
-        customersHashMap.put(c3.getCustomerId(),c3);
-        customersHashMap.put(c4.getCustomerId(),c4);
+
+
+
+//        customersHashMap.put(c1.getCustomerId(),c1);
+//        customersHashMap.put(c2.getCustomerId(),c2);
+//        customersHashMap.put(c3.getCustomerId(),c3);
+//        customersHashMap.put(c4.getCustomerId(),c4);
 
         Mobile m1 = new Mobile("m01","23/04/2020",Bill.billType.MOBILE,"Samsung","4GB+talktime","6476854431",4,100);
         Mobile m2 = new Mobile("m02","24/04/2020",Bill.billType.MOBILE,"Oppo","8GB+ Unlinited talktime","6476854451",8,4200);
