@@ -29,7 +29,7 @@ import models.Hydro;
 import models.Singleton;
 
 public class AddNewHydroBillActivity extends AppCompatActivity {
-    public static Customers dataobj;
+    public static Customers custobj;
     private EditText text_h_id;
     private EditText bill_date;
     private EditText text_agency;
@@ -49,7 +49,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
         text_agency = findViewById(R.id.text_agency);
         text_units = findViewById(R.id.text_units);
         btn_hydro = findViewById(R.id.btn_hydro);
-      // dataobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",selection));
+       custobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",selection));
         btn_hydro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +63,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                     text_units.setError("Enter the Units consumed");
                 } else {
                     Hydro hydro1 = new Hydro(text_h_id.getText().toString(), bill_date.getText().toString(), Bill.billType.HYDRO,text_agency.getText().toString(),Integer.parseInt(text_units.getText().toString()) );
-                    dataobj.addBill(hydro1,hydro1.getBillId());
+                    custobj.addBill(hydro1,hydro1.getBillId());
                     Intent bIntent = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(bIntent);
                 }

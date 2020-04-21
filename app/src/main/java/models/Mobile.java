@@ -10,7 +10,7 @@ public class Mobile extends Bill{
     private int minuteUsed;
 
     public Mobile(String billId,String billDate,billType billType,String mobileManufacturerName, String planName, String mobileNumber, int internetGbUsed,int minuteUsed) {
-        super(billId,billDate,billType);
+        super(billId,billDate, Bill.billType.MOBILE);
         this.mobileManufacturerName = mobileManufacturerName;
         this.planName = planName;
         this.mobileNumber = mobileNumber;
@@ -20,7 +20,7 @@ public class Mobile extends Bill{
     }
 
 
-@Override
+
 
     public Double calculateBill() {
         this.totalBillAmount = ((double)this.minuteUsed*3.00) + ((double)this.internetGbUsed*2.5);

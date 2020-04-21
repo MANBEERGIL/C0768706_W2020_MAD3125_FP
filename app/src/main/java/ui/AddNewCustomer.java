@@ -8,6 +8,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -104,13 +107,10 @@ public class AddNewCustomer extends AppCompatActivity {
                 else if(text_age.getText().toString().isEmpty()){
                     text_age.setError("Enter the age");
                 }
-                else if(text_email.getText().toString().isEmpty()){
-                    text_email.setError("Enter the Email Address");
-                }
-                else{
-                    Customers newCustomer = new Customers(text_custId.getText().toString(),text_first_name.getText().toString(),text_last_name.getText().toString(),text_email.getText().toString(),getGender(),text_birth_date.getText().toString());
-                    Singleton.getInstance().addCustomers(newCustomer.getCustomerId(),newCustomer);
-                    Intent aIntent = new Intent(AddNewCustomer.this,CustomerListActivity.class);
+                else if(text_email.getText().toString().matches("[A-Z0-9a-z.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
+                    Customers newCustomer = new Customers(text_custId.getText().toString(), text_first_name.getText().toString(), text_last_name.getText().toString(), text_email.getText().toString(), getGender(), text_birth_date.getText().toString());
+                    Singleton.getInstance().addCustomers(newCustomer.getCustomerId(), newCustomer);
+                    Intent aIntent = new Intent(AddNewCustomer.this, CustomerListActivity.class);
                     startActivity(aIntent);
 
 
@@ -118,6 +118,23 @@ public class AddNewCustomer extends AppCompatActivity {
 
             }
         });
+
+    }
+    @Override
+    public  boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_back,menu);
+        return  true;
+    }
+    @Override
+    public  boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.back:
+                Intent gIntent = new Intent(AddNewCustomer.this,CustomerListActivity.class);
+                startActivity(gIntent);
+                return  true ;
+            default:
+                return super.onOptionsItemSelected(item);}
     }
 
     public  String getGender(){

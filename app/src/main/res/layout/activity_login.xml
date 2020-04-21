@@ -5,7 +5,7 @@
         android:id="@+id/img_mail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/background_light"
+        android:background="@android:drawable/editbox_dropdown_light_frame"
         tools:context="ui.LoginActivity">
 
     <EditText

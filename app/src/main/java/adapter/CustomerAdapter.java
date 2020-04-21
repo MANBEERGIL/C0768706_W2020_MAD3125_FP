@@ -44,7 +44,7 @@ public class CustomerAdapter extends RecyclerView .Adapter<CustomerAdapter.Custo
     @Override
     public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
         Customers mCountry=this.customerArrayList.get(position);
-        holder.txtName.setText(mCountry.getFirstName());
+        holder.txtName.setText(mCountry.getFullName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

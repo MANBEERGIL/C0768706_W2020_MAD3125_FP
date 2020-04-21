@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="ui.AddNewMobileBillActivity$AddNewMobileBillActivity">
+        tools:context="ui.AddNewMobileBillActivity">
 
     <EditText
             android:id="@+id/text_mob_id"
@@ -15,7 +15,8 @@
             android:inputType="textPersonName"
             android:textColor="#040303"
             android:textColorHighlight="#43CEDF"
-            android:textSize="24sp"
+            android:textSize="24sp" android:background="@android:drawable/editbox_dropdown_light_frame"
+
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,6 +30,7 @@
             android:ems="10"
             android:hint="Bill Date"
             android:inputType="textPersonName"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:textColor="#0C0C0C"
             android:textColorHighlight="#56DFF1"
             android:textSize="24sp"
@@ -44,6 +46,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="Manufacturer Name"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:inputType="textPersonName"
             android:textColor="#151212"
             android:textColorHighlight="#46D6E8"
@@ -61,6 +64,7 @@
             android:ems="10"
             android:hint="Plan Name"
             android:inputType="textPersonName"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:textColor="#171616"
             android:textColorHighlight="#4AD3E5"
             android:textSize="24sp"
@@ -77,6 +81,7 @@
             android:ems="10"
             android:hint="Internet Used"
             android:inputType="textPersonName"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:textColor="#131010"
             android:textColorHighlight="#4AD3E5"
             android:textColorHint="#877F7F"
@@ -93,6 +98,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="Minute Used"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:inputType="textPersonName"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -109,6 +115,7 @@
             android:hint="Mobile Number"
             android:inputType="number"
             android:textColor="#090808"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
             android:textColorHighlight="#46CBDC"
             android:textSize="24sp"
             android:textStyle="bold"

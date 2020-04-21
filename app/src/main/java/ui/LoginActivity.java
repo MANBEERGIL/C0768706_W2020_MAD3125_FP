@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                         Intent jIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
                         startActivity(jIntent);
                     } else {
-                        editor.clear().apply();
+
                         Intent kIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
                         startActivity(kIntent);
                     }

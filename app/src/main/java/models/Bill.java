@@ -23,6 +23,7 @@ public class Bill implements Serializable {
         this.billId = billId;
         this.billDate = billDate;
         this.billType = billType;
+        this.totalBillAmount = totalBillAmount;
     }
 
 
@@ -57,12 +58,5 @@ public class Bill implements Serializable {
     public void setTotalBillAmount(Double totalBillAmount) {
         this.totalBillAmount = totalBillAmount;
     }
-
-
-  public Double calculateBill(){
-        double intialAmount = 0.0;
-        return intialAmount;
-   }
-
 
 }

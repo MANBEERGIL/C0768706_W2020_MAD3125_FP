@@ -22,12 +22,7 @@ import models.Mobile;
 
 public class BillAdapter  extends RecyclerView.Adapter<BillAdapter.BillViewHolder>{
     private ArrayList<Bill>arrayList;
-    private Bill mBill;
-    TextView textView4;
-    TextView textView5;
-    TextView textView6;
-    TextView textView7;
-    TextView textView8;
+
     public BillAdapter(ArrayList<Bill> arrayList) {
         this.arrayList = arrayList;
     }
@@ -45,36 +40,38 @@ public class BillAdapter  extends RecyclerView.Adapter<BillAdapter.BillViewHolde
      Bill aBill = this.arrayList.get(position);
      holder.bill_id.setText("Bill ID:" +aBill.getBillId());
      holder.billType.setText("Bill Type :" + aBill.getBillType());
-     holder.billAmount.setText("Bill Amount :" +aBill.getBillDate().toString());
+     holder.billAmount.setText("Bill Amount :" +aBill.getTotalBillAmount().toString());
+    holder.textView4.setText("Bill Date  :"+aBill.getBillDate());
+//        if (aBill.getBillType().equals("HYDRO")){
+//            Hydro h = (Hydro)aBill;
+//            holder. textView4.setText("Agency Nmae :" + h.getAgencyName());
+//            holder. textView5.setText("Units Consumed :" +h.getUnitConsumed());
+//        }
+//        else if(aBill.getBillType().equals("INTERNET")){
+//            Internet i = (Internet)aBill;
+//            holder.  textView4.setText("Provider Name:" +i.getProviderName());
+//            holder. textView5.setText("Internet Usage:" +i.getInternetGbUsed());
+//        }
+//        else if(aBill.getBillType().equals("MOBILE")){
+//            Mobile m = (Mobile)aBill;
+//            holder.textView4.setText("Manufacturer Name:"+ m.getMobileManufacturerName());
+//            holder.textView5.setText("Plan Name:" +m.getPlanName());
+//            holder. textView6.setText("Mobile Number:" +m.getMobileNumber());
+//            holder.textView7.setText("Internet Used:" +m.getInternetGbUsed());
+//            holder.textView8.setText("Minures Used:"+m.getMinuteUsed());
+//        }
      holder.itemView.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
              Bill bill = arrayList.get(position);
-             if (bill.getBillType().equals("Hydro")){
-                 Hydro h = (Hydro)mBill;
-                 textView4.setText("Agency Nmae :" +((Hydro) mBill).getAgencyName());
-                 textView5.setText("Units Consumed :" +((Hydro) mBill).getUnitConsumed());
-             }
-             else if(bill.getBillType().equals("Internet")){
-                 Internet i = (Internet)mBill;
-                 textView4.setText("Provider Name:" +((Internet) mBill).getProviderName());
-                 textView5.setText("Internet Usage:" +((Internet) mBill).getInternetGbUsed());
-             }
-             else if(bill.getBillType().equals("Mobile")){
-                 Mobile m = (Mobile)mBill;
-                 textView4.setText("Manufacturer Name:"+ ((Mobile) mBill).getMobileManufacturerName());
-                 textView5.setText("Plan Name:" +((Mobile) mBill).getPlanName());
-                 textView6.setText("Mobile Number:" +((Mobile) mBill).getMobileNumber());
-                 textView7.setText("Internet Used:" +((Mobile) mBill).getInternetGbUsed());
-                 textView8.setText("Minures Used:"+((Mobile) mBill).getMinuteUsed());
-             }
+
          }
      });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return this.arrayList.size();
     }
     public class BillViewHolder extends RecyclerView.ViewHolder{
         TextView billType;
@@ -87,14 +84,10 @@ public class BillAdapter  extends RecyclerView.Adapter<BillAdapter.BillViewHolde
         TextView textView8;
         public BillViewHolder(@NonNull View itemView) {
             super(itemView);
-            billType = itemView.findViewById(R.id.textView1);
-            billAmount = itemView.findViewById(R.id.textView2);
-            bill_id = itemView.findViewById(R.id.textView3);
+            billType = itemView.findViewById(R.id.textView2);
+            billAmount = itemView.findViewById(R.id.textView3);
+            bill_id = itemView.findViewById(R.id.textView1);
             textView4 = itemView.findViewById(R.id.textView4);
-            textView5 = itemView.findViewById(R.id.textView5);
-            textView6 = itemView.findViewById(R.id.textView6);
-            textView7 = itemView.findViewById(R.id.textView7);
-            textView8 = itemView.findViewById(R.id.textView8);
 
         }
     }

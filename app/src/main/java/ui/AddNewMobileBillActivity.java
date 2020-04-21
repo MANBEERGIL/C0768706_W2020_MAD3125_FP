@@ -28,7 +28,7 @@ import models.Mobile;
 
 public  class AddNewMobileBillActivity extends AppCompatActivity {
 
-    public static Customers dataobj;
+    public static Customers custobj;
     private EditText text_mob_id;
         private EditText text_bill_date;
         private EditText text_manufacturer;
@@ -68,9 +68,9 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
                 text_net_used.setError("Enter GB used");
             }else if(text_minute.getText().toString().isEmpty()){
                 text_minute.setError("Enter the minute used");
-            }else{
+            }else if(text_mobile_no.getText().toString().matches("[0-9]{10}")){
                 Mobile mobile = new Mobile(text_mob_id.getText().toString(), text_bill_date.getText().toString(), Bill.billType.MOBILE,text_manufacturer.getText().toString(),text_planName.getText().toString(),text_mobile_no.getText().toString(),Integer.parseInt(text_net_used.getText().toString()),Integer.parseInt(text_minute.getText().toString()));
-                  dataobj.addBill(mobile,mobile.getBillId());
+                  custobj.addBill(mobile,mobile.getBillId());
                 Intent fIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
                 startActivity(fIntent);
             }

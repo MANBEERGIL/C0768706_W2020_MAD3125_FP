@@ -29,6 +29,7 @@ public class CustomerListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
         rvCustomerList=findViewById(R.id.rvCustomerList);
+        getSupportActionBar().setTitle("Customers List");
         Singleton singleton = Singleton.getInstance();
         try {
             singleton.getData();

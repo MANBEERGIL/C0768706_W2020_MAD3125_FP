@@ -28,7 +28,7 @@ import models.Customers;
 import models.Internet;
 
 public class AddNewInternetBillActivity extends AppCompatActivity {
-    public static Customers dataobj;
+    public static Customers custobj;
     private EditText text_net_id;
     private EditText text_date;
     private  EditText text_provider_name;
@@ -42,6 +42,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_internet_bill);
+        getSupportActionBar().setTitle("Add Internet Bill");
         text_net_id = findViewById(R.id.text_net_id);
         text_date = findViewById(R.id.text_bill_date);
         text_provider_name = findViewById(R.id.text_provider_name);
@@ -62,7 +63,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
                     text_internet_used.setError("Enter the Units consumed");
                 }else{
                     Internet internet = new Internet(text_net_id.getText().toString(), text_date.getText().toString(), Bill.billType.INTERNET,text_provider_name.getText().toString(),Integer.parseInt(text_internet_used.getText().toString()));
-                    dataobj.addBill(internet,internet.getBillId());
+                    custobj.addBill(internet,internet.getBillId());
                     Intent dIntent = new Intent(AddNewInternetBillActivity.this,ShowBillDetailsActivity.class);
                     startActivity(dIntent);
                 }

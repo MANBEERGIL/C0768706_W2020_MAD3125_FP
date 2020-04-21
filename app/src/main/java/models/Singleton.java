@@ -18,8 +18,8 @@ public class Singleton {
     }
     public  ArrayList<Customers> getAllCustomers(){
         Collection<Customers>collection = customersHashMap.values();
-        ArrayList<Customers>customersArrayList =new ArrayList<Customers>(collection);
-        return customersArrayList;
+        ArrayList<Customers>customerArrayList =new ArrayList<Customers>(collection);
+        return customerArrayList;
     }
 
     public  void getData() throws ParseException {

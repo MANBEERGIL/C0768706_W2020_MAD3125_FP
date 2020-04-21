@@ -7,13 +7,12 @@ public class Internet extends Bill{
     private  int internetGbUsed;
 
     public Internet(String billId, String billDate,billType billType,String providerName,int internetGbUsed) {
-        super(billId,billDate,billType);
+        super(billId,billDate, Bill.billType.INTERNET);
         this.providerName = providerName;
         this.internetGbUsed = internetGbUsed;
         this.totalBillAmount = calculateBill();
     }
 
-    @Override
     public Double calculateBill() {
         this.totalBillAmount = (double)internetGbUsed*5;
         return this.totalBillAmount;
