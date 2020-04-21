@@ -30,6 +30,7 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
      private EditText text_total;
      private EditText text_gender;
      private EditText text_dob;
+     private EditText text_label;
      private ArrayList<Bill>bill;
      private  static int selection = 0;
      private RecyclerView rvBill;
@@ -51,6 +52,7 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
         text_total = findViewById(R.id.text_total);
         text_dob = findViewById(R.id.text_dob);
         text_gender = findViewById(R.id.text_phone);
+        text_label = findViewById(R.id.text_label);
         text_custid.setText("Customer ID:"+cust.getCustomerId());
           text_name.setText("Customer Name:"+cust.getFirstName());
           text_email.setText("Email ID:"+cust.getEmail());
@@ -58,7 +60,7 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
           text_gender.setText("Gender:"+cust.getGender());
          // NumberFormat format = NumberFormat.getCurrencyInstance();
           // format.setCurrency(Currency.getInstance("CAD"));
-           text_total.setText("Total Bill:"+cust.getTotalBillToPay());
+           text_total.setText("Total Bill: $"+cust.getTotalBillToPay());
         bill = cust.getBillsArray();
         rvBill = findViewById(R.id.rvBill);
         billAdapter = new BillAdapter(this.bill);

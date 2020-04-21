@@ -21,7 +21,7 @@
 
     <EditText
             android:id="@+id/text_email"
-            android:layout_width="411dp"
+            android:layout_width="420dp"
             android:layout_height="64dp"
             android:layout_marginTop="8dp"
             android:background="@android:drawable/editbox_dropdown_light_frame"
@@ -63,8 +63,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvBill"
-            android:layout_width="414dp"
-            android:layout_height="233dp"
+            android:layout_width="411dp"
+            android:layout_height="208dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -98,6 +98,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_phone" />
+
+    <EditText
+            android:id="@+id/text_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="   *******Bill details*******"
+            android:textColor="#B22020"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_total" />
     "
 "
 </androidx.constraintlayout.widget.ConstraintLayout>
