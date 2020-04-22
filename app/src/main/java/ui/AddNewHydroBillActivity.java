@@ -16,12 +16,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.c0768706_w2020_mad3125_fp.R;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collection;
 
 import models.Bill;
 import models.Customers;
@@ -31,14 +33,14 @@ import models.Singleton;
 public class AddNewHydroBillActivity extends AppCompatActivity {
     public static Customers custobj;
     private EditText text_h_id;
-    private EditText bill_date;
+    private TextView bill_date;
     private EditText text_agency;
     private EditText text_units;
     private Button btn_hydro;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-    private static  int selection = 0;
+    private  int selection  =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +51,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
         text_agency = findViewById(R.id.text_agency);
         text_units = findViewById(R.id.text_units);
         btn_hydro = findViewById(R.id.btn_hydro);
-       custobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customers",selection));
+       custobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customer selected",selection));
         btn_hydro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -23,18 +23,19 @@ public class Singleton {
     }
 
     public  void getData() throws ParseException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-//        Customers co = new Customers("c01","Manbeer","Kaur","manbeergill545@gmail.com","Female","20/04/1997");
-//        Customers ca = new Customers("c02","Manpreet","Kaur","manpreetsran545@gmail.com","Female","12/12/1997");
+   //     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+//
         Customers c1 = new Customers("c01","Harminder","Kaur","harminder545@gmail.com","Female","24/06/1998");
-        Customers c2 = new Customers("c02","Rupinder","Kaur","rupindergill545@gmail.com","Female","23/12/1994");
+        Customers c2 = new Customers("c02","Rupinder","Kaur","rupindergill545@gmail.com","Female","23/12/1994");//
         Customers c3 = new Customers("c03","Manbeer","Kaur","manbeergill545@gmail.com","Female","20/04/1997");
         Customers c4 = new Customers("c04","Manpreet","Kaur","manpreetsran545@gmail.com","Female","12/12/1997");
+        Customers c5 =  new Customers("c05","Rupinder ","kaur","rupindergill545@gmail.com","Female","23/12/1994");
 
         addCustomers(c1.getCustomerId(),c1);
         addCustomers(c2.getCustomerId(),c2);
         addCustomers(c3.getCustomerId(),c3);
         addCustomers(c4.getCustomerId(),c4);
+        addCustomers(c5.getCustomerId(),c5);
 
 
 
@@ -66,15 +67,19 @@ public class Singleton {
         c1.addBill(h1,h1.getBillId());
         c1.addBill(m1,m1.getBillId());
 
-        c2.addBill(m2,m2.getBillId());
-        c2.addBill(i1,i1.getBillId());
+       // c2.addBill(m2,m2.getBillId());
+       // c2.addBill(i1,i1.getBillId());
         c2.addBill(h3,h3.getBillId());
 
         c3.addBill(h3,h3.getBillId());
         c3.addBill(i3,i3.getBillId());
+        c3.addBill(m3,m3.getBillId());
 
         c4.addBill(i2,i2.getBillId());
         c4.addBill(h2,h2.getBillId());
+       // c4.addBill(m2,m2.getBillId());
+
+        c5.addBill(h3,h3.getBillId());
     }
 
 

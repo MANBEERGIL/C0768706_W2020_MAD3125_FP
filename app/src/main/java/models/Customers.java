@@ -131,7 +131,7 @@ public class Customers implements Parcelable {
     }
     private String fullName(){
         String fullName ;
-        fullName = firstName + "" + lastName;
+        fullName = firstName + "  " + lastName;
         return  fullName;
     }
      public  ArrayList <Bill> getBillsArray() {

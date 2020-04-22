@@ -2,6 +2,7 @@ package adapter;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class BillAdapter  extends RecyclerView.Adapter<BillAdapter.BillViewHolde
      Bill aBill = this.arrayList.get(position);
      holder.bill_id.setText("Bill ID:" +aBill.getBillId());
      holder.billType.setText("Bill Type :" + aBill.getBillType());
-     holder.billAmount.setText("Bill Amount :" +aBill.getTotalBillAmount().toString());
+     holder.billAmount.setText("Bill Amount : $" +aBill.getTotalBillAmount().toString());
     holder.textView4.setText("Bill Date  :"+aBill.getBillDate());
 //        if (aBill.getBillType().equals("HYDRO")){
 //            Hydro h = (Hydro)aBill;
@@ -64,6 +65,8 @@ public class BillAdapter  extends RecyclerView.Adapter<BillAdapter.BillViewHolde
          @Override
          public void onClick(View v) {
              Bill bill = arrayList.get(position);
+             Intent pIntent = new Intent(String.valueOf(holder.itemView.getContext()));
+             holder.itemView.getContext().startActivity(pIntent);
 
          }
      });
@@ -78,10 +81,7 @@ public class BillAdapter  extends RecyclerView.Adapter<BillAdapter.BillViewHolde
         TextView billAmount;
         TextView bill_id;
         TextView textView4;
-        TextView textView5;
-        TextView textView6;
-        TextView textView7;
-        TextView textView8;
+
         public BillViewHolder(@NonNull View itemView) {
             super(itemView);
             billType = itemView.findViewById(R.id.textView2);

@@ -3,6 +3,8 @@ package ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.c0768706_w2020_mad3125_fp.R;
 
@@ -24,25 +27,28 @@ import java.util.Calendar;
 import models.Bill;
 import models.Customers;
 import models.Mobile;
+import models.Singleton;
 
 
 public  class AddNewMobileBillActivity extends AppCompatActivity {
 
     public static Customers custobj;
     private EditText text_mob_id;
-        private EditText text_bill_date;
+        private TextView text_bill_date;
         private EditText text_manufacturer;
         private  EditText text_planName;
         private  EditText text_mobile_no;
         private EditText text_net_used;
         private  EditText text_minute;
         private Button btn_mobile;
+        private int selection = 0;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_add_new_mobile_bill);
+            getSupportActionBar().setTitle("Add Mobile Bill");
            text_mob_id = findViewById(R.id.text_mob_id);
           text_manufacturer = findViewById(R.id.text_manufacturer);
           text_planName = findViewById(R.id.text_planName);
@@ -51,6 +57,7 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
           text_mobile_no = findViewById(R.id.text_mobile_no);
           text_net_used = findViewById(R.id.text_net_used);
           text_minute = findViewById(R.id.text_minute);
+            custobj = Singleton.getInstance().getAllCustomers().get(getIntent().getIntExtra("customer selected",selection));
           btn_mobile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -74,6 +81,9 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
                 Intent fIntent = new Intent(AddNewMobileBillActivity.this,ShowBillDetailsActivity.class);
                 startActivity(fIntent);
             }
+                    else{
+                        alertBox(AddNewMobileBillActivity.this, "Invalid Value", "Invalid Mobile Number");;
+                    }
                 }
           });
            text_bill_date.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +127,18 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
                 default:
                     return super.onOptionsItemSelected(item);}
             }
+    private void alertBox(Context context, String title, String message) {
+        android.app.AlertDialog.Builder alertDialog = new android.app.AlertDialog.Builder( context );
+        alertDialog.setTitle( title );
+        alertDialog.setMessage( message );
+        alertDialog.setPositiveButton( "OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        } );
+        alertDialog.show();
+    }
 
     }
 

@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.c0768706_w2020_mad3125_fp.R;
 
@@ -24,18 +25,19 @@ import models.Singleton;
 
 public class  ShowBillDetailsActivity extends AppCompatActivity {
      private  Customers cust;
-     private EditText text_custid;
-     private EditText text_name;
-     private EditText text_email;
-     private EditText text_total;
-     private EditText text_gender;
-     private EditText text_dob;
-     private EditText text_label;
+     private TextView text_custid;
+     private TextView text_name;
+     private TextView text_email;
+     private TextView text_total;
+     private TextView text_gender;
+     private TextView text_dob;
+     private TextView text_label;
      private ArrayList<Bill>bill;
-     private  static int selection = 0;
+     private   int selection = 0;
      private RecyclerView rvBill;
      private  ArrayList<Bill>arrayList;
      private  BillAdapter billAdapter;
+     private Customers cus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +56,7 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
         text_gender = findViewById(R.id.text_phone);
         text_label = findViewById(R.id.text_label);
         text_custid.setText("Customer ID:"+cust.getCustomerId());
-          text_name.setText("Customer Name:"+cust.getFirstName());
+          text_name.setText("Customer Name:"+cust.getFullName());
           text_email.setText("Email ID:"+cust.getEmail());
           text_dob.setText("Date of Birth:"+cust.getBirthDate());
           text_gender.setText("Gender:"+cust.getGender());

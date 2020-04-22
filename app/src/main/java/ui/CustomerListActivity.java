@@ -24,19 +24,24 @@ public class CustomerListActivity extends AppCompatActivity {
     private ArrayList<Customers> rvcustomers;
     private CustomerAdapter customerAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
         rvCustomerList=findViewById(R.id.rvCustomerList);
         getSupportActionBar().setTitle("Customers List");
-        Singleton singleton = Singleton.getInstance();
+
+        ;
+        Singleton singleton = null;
         try {
-            singleton.getData();
-        }catch (ParseException e){
+            Singleton.getInstance().getData();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
-        rvcustomers = new ArrayList<>(Singleton.getInstance().getAllCustomers());
+
+
+        rvcustomers = new ArrayList<>(singleton.getInstance().getAllCustomers());
         customerAdapter = new CustomerAdapter(rvcustomers);
         RecyclerView.LayoutManager m =new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
         rvCustomerList.setLayoutManager(m);
@@ -58,6 +63,7 @@ public class CustomerListActivity extends AppCompatActivity {
                 return  true;
             case R.id.add_customer:
                 Intent iIntent = new Intent(CustomerListActivity.this,AddNewCustomer.class);
+                iIntent.getParcelableExtra( "newCustomer" );
                 startActivity(iIntent);
                 return true;
             default:
