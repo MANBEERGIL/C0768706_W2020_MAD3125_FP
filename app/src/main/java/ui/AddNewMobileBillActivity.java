@@ -41,7 +41,7 @@ public  class AddNewMobileBillActivity extends AppCompatActivity {
         private EditText text_net_used;
         private  EditText text_minute;
         private Button btn_mobile;
-        private int selection = 0;
+        private int selection = 1;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
 
         @Override

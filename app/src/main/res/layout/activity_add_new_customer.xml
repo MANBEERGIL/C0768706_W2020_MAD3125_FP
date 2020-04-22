@@ -133,7 +133,6 @@
             android:id="@+id/text_custId"
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:ems="10"
             android:hint="Customer ID"
             android:inputType="textPersonName"
             android:textColor="#100E0E"

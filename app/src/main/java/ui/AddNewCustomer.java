@@ -47,7 +47,7 @@ public class AddNewCustomer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setTitle("Add New Customer");
         setContentView(R.layout.activity_add_new_customer);
-        text_custId = findViewById(R.id.text_custid);
+        text_custId = findViewById(R.id.text_custId);
         text_birth_date = findViewById(R.id.text_birth_date);
         text_first_name = findViewById(R.id.text_first_name);
         text_last_name = findViewById(R.id.text_last_name);
@@ -73,7 +73,7 @@ public class AddNewCustomer extends AppCompatActivity {
                     text_age.setError( "Enter the age" );
                 } else if (text_email.getText().toString().matches( "[A-Z0-9a-z.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}" )) {
 
-                    Customers newCustomer = new Customers( text_custId.getText().toString(), text_first_name.getText().toString(), text_last_name.getText().toString(), text_email.getText().toString(), getGender(), text_birth_date.getText().toString() );
+                    Customers newCustomer = new Customers(text_custId.getText().toString(), text_first_name.getText().toString(), text_last_name.getText().toString(), text_email.getText().toString(), getGender(), text_birth_date.getText().toString());
                     Singleton.getInstance().addCustomers( newCustomer.getCustomerId(), newCustomer );
                     Intent aIntent = new Intent( AddNewCustomer.this, CustomerListActivity.class );
                     Bundle bundle = new Bundle();
@@ -85,8 +85,6 @@ public class AddNewCustomer extends AppCompatActivity {
         text_birth_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 Calendar calender = Calendar.getInstance();
                 int year = calender.get(Calendar.YEAR);
                 int month = calender.get(Calendar.MONTH);

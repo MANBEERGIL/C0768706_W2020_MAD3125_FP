@@ -39,7 +39,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
     private EditText text_internet_used;
     private Button btn_internet;
     DatePickerDialog.OnDateSetListener mDateSetLstener;
-    private int selection = 0;
+    private int selection = 1;
 
 
     @Override

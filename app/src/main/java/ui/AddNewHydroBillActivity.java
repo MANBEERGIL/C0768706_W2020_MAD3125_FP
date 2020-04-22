@@ -40,7 +40,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener mDateSetLstener;
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-    private  int selection  =0;
+    private  int selection  =1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

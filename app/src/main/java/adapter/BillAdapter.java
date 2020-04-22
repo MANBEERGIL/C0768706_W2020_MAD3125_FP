@@ -61,15 +61,15 @@ public class BillAdapter  extends RecyclerView.Adapter<BillAdapter.BillViewHolde
 //            holder.textView7.setText("Internet Used:" +m.getInternetGbUsed());
 //            holder.textView8.setText("Minures Used:"+m.getMinuteUsed());
 //        }
-     holder.itemView.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-             Bill bill = arrayList.get(position);
-             Intent pIntent = new Intent(String.valueOf(holder.itemView.getContext()));
-             holder.itemView.getContext().startActivity(pIntent);
-
-         }
-     });
+//     holder.itemView.setOnClickListener(new View.OnClickListener() {
+//         @Override
+//         public void onClick(View v) {
+//             Bill bill = arrayList.get(position);
+//             Intent pIntent = new Intent(String.valueOf(holder.itemView.getContext()));
+//             holder.itemView.getContext().startActivity(pIntent);
+//
+//         }
+//     });
     }
 
     @Override

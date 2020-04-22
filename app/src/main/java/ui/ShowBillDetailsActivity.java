@@ -33,11 +33,10 @@ public class  ShowBillDetailsActivity extends AppCompatActivity {
      private TextView text_dob;
      private TextView text_label;
      private ArrayList<Bill>bill;
-     private   int selection = 0;
+     private   int selection = 1;
      private RecyclerView rvBill;
      private  ArrayList<Bill>arrayList;
      private  BillAdapter billAdapter;
-     private Customers cus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
